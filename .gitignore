@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+.venv/
+node_modules/
+.azure/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.pyright/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+.DS_Store

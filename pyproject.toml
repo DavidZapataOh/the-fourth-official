@@ -1,0 +1,43 @@
+[project]
+name = "fourth"
+version = "0.0.0"
+description = "The Fourth Official"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.13"
+dependencies = []
+
+[dependency-groups]
+dev = [
+  "hypothesis",
+  "pyright",
+  "pytest",
+  "pyyaml",
+  "ruff",
+  "types-pyyaml",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.workspace]
+members = ["libs/*/py"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "C4", "PL"]
+
+[tool.ruff.lint.per-file-ignores]
+"**/tests/**" = ["PLR2004"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "libs", "infra"]
+addopts = "-ra --strict-markers"
+
+[tool.pyright]
+include = ["tests", "libs", "infra"]
+typeCheckingMode = "basic"
+strict = ["libs"]
+pythonVersion = "3.13"

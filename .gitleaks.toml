@@ -1,0 +1,6 @@
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Test vectors contain throwaway keys"
+paths = ['''libs/crypto/vectors/''']
