@@ -1,0 +1,30 @@
+{
+  "claim_hash": "sha256:d0d4ef2e4d11e53ca9095c7ed2a5b145bfba11d43e11c964e7172d50ee91a4b4",
+  "status": "confirmed",
+  "witnesses": {
+    "feed": {
+      "ok": true,
+      "batch": "b_000382"
+    },
+    "rules": {
+      "ok": true
+    },
+    "camera": {
+      "result": "corroborates",
+      "delta": {
+        "t_ms": 120,
+        "pos_m": 1.4
+      },
+      "tolerance": {
+        "t_ms": 500,
+        "pos_m": 3.0
+      }
+    }
+  },
+  "measure": {
+    "value": 0.12,
+    "unit": "m",
+    "uncertainty": 0.03
+  },
+  "ts": "2026-10-25T17:02:11Z"
+}

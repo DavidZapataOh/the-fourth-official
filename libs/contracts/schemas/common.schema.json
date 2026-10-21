@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/fourth/v1/common.schema.json",
+  "title": "Common",
+  "description": "Shared definitions referenced by every contract.",
+  "$defs": {
+    "Sha256Digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "Ed25519Signature": {
+      "type": "string",
+      "pattern": "^ed25519:[A-Za-z0-9_-]{86}$"
+    },
+    "PublicKey": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{43}$"
+    },
+    "Timestamp": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?Z$"
+    },
+    "MatchId": {
+      "type": "string",
+      "pattern": "^m_[0-9]{4}_[0-9]{4}$"
+    },
+    "TeamCode": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$"
+    },
+    "PlayerId": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}_[0-9]{2}$"
+    },
+    "IncidentId": {
+      "type": "string",
+      "pattern": "^i_[0-9a-f]{4,16}$"
+    },
+    "Lang": {
+      "enum": ["en", "es", "ar"]
+    },
+    "Persona": {
+      "enum": ["casual", "analyst"]
+    },
+    "Choice": {
+      "enum": [
+        "offside",
+        "onside",
+        "penalty",
+        "no_penalty",
+        "yellow_card",
+        "red_card",
+        "no_card",
+        "handball",
+        "no_handball",
+        "goal",
+        "no_goal"
+      ]
+    }
+  }
+}

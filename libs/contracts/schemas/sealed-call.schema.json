@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/fourth/v1/sealed-call.schema.json",
+  "title": "SealedCall",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "v",
+    "incident_id",
+    "match_id",
+    "commitment",
+    "fan_key",
+    "nonce",
+    "sealed_at",
+    "sig"
+  ],
+  "properties": {
+    "v": {
+      "const": 1
+    },
+    "incident_id": {
+      "$ref": "common.schema.json#/$defs/IncidentId"
+    },
+    "match_id": {
+      "$ref": "common.schema.json#/$defs/MatchId"
+    },
+    "commitment": {
+      "$ref": "common.schema.json#/$defs/Sha256Digest"
+    },
+    "fan_key": {
+      "$ref": "common.schema.json#/$defs/PublicKey"
+    },
+    "nonce": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{22}$"
+    },
+    "sealed_at": {
+      "$ref": "common.schema.json#/$defs/Timestamp"
+    },
+    "sig": {
+      "$ref": "common.schema.json#/$defs/Ed25519Signature"
+    }
+  }
+}

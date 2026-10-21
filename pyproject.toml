@@ -9,11 +9,13 @@ dependencies = []
 
 [dependency-groups]
 dev = [
+  "datamodel-code-generator>=0.86.0",
   "hypothesis",
   "pyright",
   "pytest",
   "pyyaml",
   "ruff",
+  "types-jsonschema>=4.26.0.20261006",
   "types-pyyaml",
 ]
 
@@ -25,6 +27,7 @@ members = ["libs/*/py"]
 
 [tool.ruff]
 line-length = 100
+extend-exclude = ["libs/*/py/src/*/models"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM", "C4", "PL"]
@@ -40,4 +43,5 @@ addopts = "-ra --strict-markers"
 include = ["tests", "libs", "infra"]
 typeCheckingMode = "basic"
 strict = ["libs"]
+ignore = ["libs/*/py/src/*/models"]
 pythonVersion = "3.13"

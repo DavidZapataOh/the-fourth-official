@@ -1,4 +1,4 @@
-.PHONY: install install-py install-ts lint lint-py lint-ts typecheck typecheck-py typecheck-ts test test-py test-ts check
+.PHONY: install install-py install-ts lint lint-py lint-ts typecheck typecheck-py typecheck-ts test test-py test-ts check generate check-generated
 
 install: install-py install-ts
 install-py:
@@ -26,3 +26,17 @@ test-ts:
 	pnpm test
 
 check: lint typecheck test
+
+PY_MODELS := libs/contracts/py/src/fourth_contracts/models
+TS_TYPES := libs/contracts/ts/src/generated
+
+generate:
+	rm -rf $(PY_MODELS) $(TS_TYPES)
+	uv run datamodel-codegen --input libs/contracts/schemas --input-file-type jsonschema \
+		--output $(PY_MODELS) --output-model-type pydantic_v2.BaseModel \
+		--target-python-version 3.13 --use-annotated --use-standard-collections \
+		--use-union-operator --disable-timestamp --formatters ruff-format
+	pnpm exec json2ts -i libs/contracts/schemas -o $(TS_TYPES) --imports
+
+check-generated: generate
+	git diff --exit-code -- libs/contracts

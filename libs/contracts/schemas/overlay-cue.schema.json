@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/fourth/v1/overlay-cue.schema.json",
+  "title": "OverlayCue",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "v",
+    "cue_id",
+    "t_start_ms",
+    "duration_ms",
+    "region",
+    "priority",
+    "persona",
+    "lang",
+    "payload",
+    "credential"
+  ],
+  "properties": {
+    "v": {
+      "const": 1
+    },
+    "cue_id": {
+      "type": "string",
+      "pattern": "^cue_[0-9]+$"
+    },
+    "t_start_ms": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "duration_ms": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 60000
+    },
+    "region": {
+      "enum": ["lower_third", "pitch", "scoreboard", "side_card"]
+    },
+    "priority": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9
+    },
+    "persona": {
+      "$ref": "common.schema.json#/$defs/Persona"
+    },
+    "lang": {
+      "$ref": "common.schema.json#/$defs/Lang"
+    },
+    "payload": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "text_ids", "claims"],
+          "properties": {
+            "type": {
+              "const": "insight_card"
+            },
+            "text_ids": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "pattern": "^t_[A-Z]{2}_[0-9]+$"
+              }
+            },
+            "claims": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "pattern": "^c_[0-9a-f]{4,16}$"
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "commands", "claims"],
+          "properties": {
+            "type": {
+              "const": "scene_commands"
+            },
+            "commands": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["op", "fact_ids"],
+                "properties": {
+                  "op": {
+                    "enum": ["line", "zone", "lane", "ghost", "camera"]
+                  },
+                  "fact_ids": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "string",
+                      "pattern": "^c_[0-9a-f]{4,16}$"
+                    }
+                  },
+                  "params": {
+                    "type": "object"
+                  }
+                }
+              }
+            },
+            "claims": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "pattern": "^c_[0-9a-f]{4,16}$"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "credential": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["verdict_ref", "status", "receipt"],
+      "properties": {
+        "verdict_ref": {
+          "type": "string",
+          "pattern": "^v_[0-9a-f]{4,16}$"
+        },
+        "status": {
+          "const": "confirmed"
+        },
+        "receipt": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        }
+      }
+    }
+  }
+}

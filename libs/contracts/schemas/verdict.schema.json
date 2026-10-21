@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/fourth/v1/verdict.schema.json",
+  "title": "Verdict",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["claim_hash", "status", "witnesses", "notary", "ts"],
+  "properties": {
+    "claim_hash": {
+      "$ref": "common.schema.json#/$defs/Sha256Digest"
+    },
+    "status": {
+      "enum": ["confirmed", "disputed", "blocked"]
+    },
+    "witnesses": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["feed", "rules", "camera"],
+      "properties": {
+        "feed": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["ok"],
+          "properties": {
+            "ok": {
+              "type": "boolean"
+            },
+            "batch": {
+              "type": "string",
+              "pattern": "^b_[0-9]{6}$"
+            }
+          }
+        },
+        "rules": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["ok"],
+          "properties": {
+            "ok": {
+              "type": "boolean"
+            }
+          }
+        },
+        "camera": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["result"],
+          "properties": {
+            "result": {
+              "enum": ["corroborates", "contradicts", "inconclusive"]
+            },
+            "delta": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["t_ms", "pos_m"],
+              "properties": {
+                "t_ms": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "pos_m": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              }
+            },
+            "tolerance": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["t_ms", "pos_m"],
+              "properties": {
+                "t_ms": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "pos_m": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "measure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "unit", "uncertainty"],
+      "properties": {
+        "value": {
+          "type": "number"
+        },
+        "unit": {
+          "type": "string",
+          "maxLength": 16
+        },
+        "uncertainty": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "notary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code_digest", "policy_hash", "maa_token_hash", "build_attestation"],
+      "properties": {
+        "code_digest": {
+          "$ref": "common.schema.json#/$defs/Sha256Digest"
+        },
+        "policy_hash": {
+          "$ref": "common.schema.json#/$defs/Sha256Digest"
+        },
+        "maa_token_hash": {
+          "$ref": "common.schema.json#/$defs/Sha256Digest"
+        },
+        "build_attestation": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        }
+      }
+    },
+    "ts": {
+      "$ref": "common.schema.json#/$defs/Timestamp"
+    }
+  }
+}

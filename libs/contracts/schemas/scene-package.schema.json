@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/fourth/v1/scene-package.schema.json",
+  "title": "ScenePackage",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "v",
+    "match_id",
+    "seed_commitment",
+    "pitch",
+    "hz",
+    "duration_ms",
+    "trajectory_sha256",
+    "teams"
+  ],
+  "properties": {
+    "v": {
+      "const": 1
+    },
+    "match_id": {
+      "$ref": "common.schema.json#/$defs/MatchId"
+    },
+    "seed_commitment": {
+      "$ref": "common.schema.json#/$defs/Sha256Digest"
+    },
+    "pitch": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["length_m", "width_m"],
+      "properties": {
+        "length_m": {
+          "const": 105
+        },
+        "width_m": {
+          "const": 68
+        }
+      }
+    },
+    "hz": {
+      "const": 25
+    },
+    "duration_ms": {
+      "type": "integer",
+      "exclusiveMinimum": 0
+    },
+    "trajectory_sha256": {
+      "$ref": "common.schema.json#/$defs/Sha256Digest"
+    },
+    "teams": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "kit", "players"],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/TeamCode"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+          },
+          "kit": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["primary", "secondary"],
+            "properties": {
+              "primary": {
+                "type": "string",
+                "pattern": "^#[0-9A-F]{6}$"
+              },
+              "secondary": {
+                "type": "string",
+                "pattern": "^#[0-9A-F]{6}$"
+              }
+            }
+          },
+          "players": {
+            "type": "array",
+            "minItems": 11,
+            "maxItems": 23,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["id", "number", "name", "role"],
+              "properties": {
+                "id": {
+                  "$ref": "common.schema.json#/$defs/PlayerId"
+                },
+                "number": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 99
+                },
+                "name": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 40
+                },
+                "role": {
+                  "enum": ["GK", "DF", "MF", "FW"]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,13 +1,14 @@
 import re
 from pathlib import Path
 
+from conftest import ROOT
+
 PRIVATE_REFERENCES = [
     r"\bsprints?\b",
     r"PROYECTO",
     r"FICHA\.md",
     r"BRAND/",
     r"Rules\.txt",
-    r"\.\./\.\./",
 ]
 UNICODE_ALLOWED_DIRS = {"locales", "fixtures", "vectors", "testdata"}
 TEXT_SUFFIXES = {
@@ -28,6 +29,11 @@ TEXT_SUFFIXES = {
 NON_ENGLISH = re.compile("[áéíóúñÁÉÍÓÚÑ¿¡؀-ۿ]")
 
 
+def escapes_repo(path: Path, line: str) -> bool:
+    depth = len(path.relative_to(ROOT).parts) - 1
+    return any(m.count("../") > depth for m in re.findall(r"(?:\.\./)+", line))
+
+
 def text_files(repo_files: list[Path]):
     for path in repo_files:
         if path == Path(__file__).resolve() or path.suffix not in TEXT_SUFFIXES:
@@ -44,9 +50,16 @@ def test_no_private_references(repo_files: list[Path]):
         f"{path}:{number}: {line.strip()}"
         for path, text in text_files(repo_files)
         for number, line in enumerate(text.splitlines(), 1)
-        if any(p.search(line) for p in patterns)
+        if any(p.search(line) for p in patterns) or escapes_repo(path, line)
     ]
     assert hits == []
+
+
+def test_relative_paths_leaving_the_repo_are_detected():
+    nested = ROOT / "libs" / "a" / "file.ts"
+    assert escapes_repo(nested, 'import "../../../../outside"')
+    assert not escapes_repo(nested, 'import "../../schemas/x.json"')
+    assert not escapes_repo(ROOT / "file.ts", "no paths here")
 
 
 def test_sources_are_english(repo_files: list[Path]):

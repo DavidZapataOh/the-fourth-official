@@ -1,0 +1,29 @@
+{
+  "v": 1,
+  "cue_id": "cue_5522",
+  "t_start_ms": 1893500,
+  "duration_ms": 6000,
+  "region": "pitch",
+  "priority": 2,
+  "persona": "analyst",
+  "lang": "en",
+  "payload": {
+    "type": "scene_commands",
+    "commands": [
+      {
+        "op": "line",
+        "fact_ids": ["c_b3d2"],
+        "params": {
+          "from": [61, 20],
+          "to": [61, 48]
+        }
+      }
+    ],
+    "claims": ["c_b3d2"]
+  },
+  "credential": {
+    "verdict_ref": "v_0a1b",
+    "status": "confirmed",
+    "receipt": "c2NpdHQ"
+  }
+}

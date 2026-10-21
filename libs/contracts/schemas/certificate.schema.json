@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/fourth/v1/certificate.schema.json",
+  "title": "Certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["v", "match_id", "incident_id", "call", "reveal", "verdict_cose", "receipt"],
+  "properties": {
+    "v": {
+      "const": 1
+    },
+    "match_id": {
+      "$ref": "common.schema.json#/$defs/MatchId"
+    },
+    "incident_id": {
+      "$ref": "common.schema.json#/$defs/IncidentId"
+    },
+    "call": {
+      "$ref": "sealed-call.schema.json"
+    },
+    "reveal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["choice", "confidence", "salt"],
+      "properties": {
+        "choice": {
+          "$ref": "common.schema.json#/$defs/Choice"
+        },
+        "confidence": {
+          "enum": ["sure", "doubt"]
+        },
+        "salt": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{22,43}$"
+        }
+      }
+    },
+    "verdict_cose": {
+      "type": "string",
+      "minLength": 1
+    },
+    "receipt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "time_proofs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [],
+      "properties": {
+        "rfc3161": {
+          "type": "string",
+          "minLength": 1
+        },
+        "opentimestamps": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["state", "proof"],
+          "properties": {
+            "state": {
+              "enum": ["pending", "anchored"]
+            },
+            "proof": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "seed_opening": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["seed"],
+      "properties": {
+        "seed": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "truth": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["choice", "revealed_at"],
+      "properties": {
+        "choice": {
+          "$ref": "common.schema.json#/$defs/Choice"
+        },
+        "revealed_at": {
+          "$ref": "common.schema.json#/$defs/Timestamp"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "claim_hash": "sha256:d0d4ef2e4d11e53ca9095c7ed2a5b145bfba11d43e11c964e7172d50ee91a4b4",
+  "status": "confirmed",
+  "witnesses": {
+    "feed": {
+      "ok": true,
+      "batch": "b_000382"
+    },
+    "rules": {
+      "ok": true
+    },
+    "camera": {
+      "result": "corroborates",
+      "delta": {
+        "t_ms": 120,
+        "pos_m": 1.4
+      },
+      "tolerance": {
+        "t_ms": 500,
+        "pos_m": 3.0
+      }
+    }
+  },
+  "measure": {
+    "value": 0.12,
+    "unit": "m",
+    "uncertainty": 0.03
+  },
+  "notary": {
+    "code_digest": "sha256:5f993798fd9928997da061cca782a935f62e174fab9a84dbf78c7b12bc662223",
+    "policy_hash": "sha256:823412d1eacb67956220e532959f0104603057c88704863ca38e7cd188fda812",
+    "maa_token_hash": "sha256:37bfd2508fbbac943f3b3f968cec5b7960eb59f35c32943d76c87f50c62da65b",
+    "build_attestation": "gh:org/repo@0123456789abcdef#1"
+  },
+  "ts": "2026-10-25T17:02:11Z"
+}

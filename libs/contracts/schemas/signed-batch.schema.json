@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/fourth/v1/signed-batch.schema.json",
+  "title": "SignedBatch",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["header", "events", "sig"],
+  "properties": {
+    "header": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["batch_id", "epoch", "prev_root", "merkle_root", "count", "key_id"],
+      "properties": {
+        "batch_id": {
+          "type": "string",
+          "pattern": "^b_[0-9]{6}$"
+        },
+        "epoch": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "prev_root": {
+          "$ref": "common.schema.json#/$defs/Sha256Digest",
+          "description": "Merkle root of the previous batch. The first batch uses sha256: followed by 64 zeros."
+        },
+        "merkle_root": {
+          "$ref": "common.schema.json#/$defs/Sha256Digest"
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Number of events. Not enforced by the schema: consumers compare it with the length of events."
+        },
+        "key_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]{2,63}$"
+        }
+      }
+    },
+    "events": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "event.schema.json"
+      }
+    },
+    "sig": {
+      "$ref": "common.schema.json#/$defs/Ed25519Signature"
+    }
+  }
+}

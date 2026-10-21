@@ -1,0 +1,18 @@
+{
+  "claim_id": "c_91a7",
+  "kind": "stat",
+  "subject": {
+    "team": "HAR",
+    "window": [1800000, 1890000]
+  },
+  "predicate": "possession_pct",
+  "value": 63.1,
+  "unit": "%",
+  "evidence": [],
+  "derivation": {
+    "engine_version": "1.4.0",
+    "code_hash": "sha256:ed9f6f25068608efd412958da4dfc19328ca3511251fa6d5f9c42baf230e32f8",
+    "inputs_root": "sha256:32381523e63197c929b67f793a8098bed0ae3a6fa902634fdbcc6fa4567f3346"
+  },
+  "text_ids": ["t_ES_88"]
+}

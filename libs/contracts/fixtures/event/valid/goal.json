@@ -1,0 +1,13 @@
+{
+  "v": 1,
+  "match_id": "m_2026_0001",
+  "seq": 18431,
+  "clock_ms": 1899600,
+  "period": 2,
+  "type": "goal",
+  "team": "HAR",
+  "player_id": "HAR_09",
+  "x": 105.0,
+  "y": 34.0,
+  "outcome": "scored"
+}

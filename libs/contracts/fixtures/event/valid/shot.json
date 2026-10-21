@@ -1,0 +1,17 @@
+{
+  "v": 1,
+  "match_id": "m_2026_0001",
+  "seq": 18430,
+  "clock_ms": 1899000,
+  "period": 2,
+  "type": "shot",
+  "team": "HAR",
+  "player_id": "HAR_10",
+  "x": 88.4,
+  "y": 34.0,
+  "end_x": 105.0,
+  "end_y": 31.2,
+  "outcome": "saved",
+  "pressure": 0.7,
+  "ball_speed_kmh": 96.5
+}

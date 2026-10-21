@@ -66,7 +66,7 @@ def test_typescript_workspace_layout():
 MAKE_TARGETS = {
     "install", "check", "lint", "typecheck", "test",
     "install-py", "install-ts", "lint-py", "lint-ts",
-    "typecheck-py", "typecheck-ts", "test-py", "test-ts",
+    "typecheck-py", "typecheck-ts", "test-py", "test-ts", "generate", "check-generated",
 }  # fmt: skip
 
 

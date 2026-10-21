@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/fourth/v1/event.schema.json",
+  "title": "Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["v", "match_id", "seq", "clock_ms", "period", "type"],
+  "properties": {
+    "v": {
+      "const": 1
+    },
+    "match_id": {
+      "$ref": "common.schema.json#/$defs/MatchId"
+    },
+    "seq": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "clock_ms": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "period": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 4
+    },
+    "type": {
+      "enum": [
+        "kickoff",
+        "pass",
+        "carry",
+        "shot",
+        "save",
+        "goal",
+        "tackle",
+        "foul",
+        "card",
+        "offside",
+        "handball",
+        "corner",
+        "throw_in",
+        "goal_kick",
+        "free_kick",
+        "penalty",
+        "substitution",
+        "period_end"
+      ]
+    },
+    "team": {
+      "$ref": "common.schema.json#/$defs/TeamCode"
+    },
+    "player_id": {
+      "$ref": "common.schema.json#/$defs/PlayerId"
+    },
+    "target_player_id": {
+      "$ref": "common.schema.json#/$defs/PlayerId"
+    },
+    "x": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 105
+    },
+    "y": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 68
+    },
+    "end_x": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 105
+    },
+    "end_y": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 68
+    },
+    "outcome": {
+      "enum": [
+        "completed",
+        "intercepted",
+        "blocked",
+        "saved",
+        "scored",
+        "missed",
+        "awarded",
+        "denied"
+      ]
+    },
+    "pressure": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "ball_speed_kmh": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 250
+    }
+  }
+}

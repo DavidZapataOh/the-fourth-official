@@ -1,0 +1,9 @@
+{
+  "v": 1,
+  "incident_id": "i_5a1e",
+  "match_id": "m_2026_0001",
+  "commitment": "sha256:6a19f0fb4be54511524bcd5b0c98b38da1ee049a39735c39311e10336024436f",
+  "fan_key": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8",
+  "nonce": "AAECAwQFBgcICQoLDA0ODw",
+  "sealed_at": "2026-10-25T17:01:40Z"
+}

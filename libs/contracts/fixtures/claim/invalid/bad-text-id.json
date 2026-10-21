@@ -1,0 +1,26 @@
+{
+  "claim_id": "c_91a7",
+  "kind": "stat",
+  "subject": {
+    "team": "HAR",
+    "window": [1800000, 1890000]
+  },
+  "predicate": "possession_pct",
+  "value": 63.1,
+  "unit": "%",
+  "evidence": [
+    {
+      "event_id": "18401",
+      "proof": [
+        "sha256:f64551fcd6f07823cb87971cfb91446425da18286b3ab1ef935e0cbd7a69f68a",
+        "sha256:3946ca64ff78d93ca61090a437cbb6b3d2ca0d488f5f9ccf3059608368b27693"
+      ]
+    }
+  ],
+  "derivation": {
+    "engine_version": "1.4.0",
+    "code_hash": "sha256:ed9f6f25068608efd412958da4dfc19328ca3511251fa6d5f9c42baf230e32f8",
+    "inputs_root": "sha256:32381523e63197c929b67f793a8098bed0ae3a6fa902634fdbcc6fa4567f3346"
+  },
+  "text_ids": ["t_es_88"]
+}

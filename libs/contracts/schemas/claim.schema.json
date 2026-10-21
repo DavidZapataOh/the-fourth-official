@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/fourth/v1/claim.schema.json",
+  "title": "Claim",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["claim_id", "kind", "subject", "predicate", "value", "evidence", "derivation"],
+  "properties": {
+    "claim_id": {
+      "type": "string",
+      "pattern": "^c_[0-9a-f]{4,16}$"
+    },
+    "kind": {
+      "enum": ["stat", "event", "incident", "cause"]
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [],
+      "properties": {
+        "team": {
+          "$ref": "common.schema.json#/$defs/TeamCode"
+        },
+        "player_id": {
+          "$ref": "common.schema.json#/$defs/PlayerId"
+        },
+        "incident_id": {
+          "$ref": "common.schema.json#/$defs/IncidentId"
+        },
+        "window": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "integer",
+              "minimum": 0
+            }
+          ],
+          "items": false,
+          "minItems": 2
+        }
+      }
+    },
+    "predicate": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]{0,63}$"
+    },
+    "value": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "boolean"
+        }
+      ]
+    },
+    "unit": {
+      "type": "string",
+      "maxLength": 16
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["event_id", "proof"],
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "pattern": "^[0-9]+$"
+          },
+          "proof": {
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/$defs/Sha256Digest"
+            }
+          }
+        }
+      }
+    },
+    "derivation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["engine_version", "code_hash", "inputs_root"],
+      "properties": {
+        "engine_version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        },
+        "code_hash": {
+          "$ref": "common.schema.json#/$defs/Sha256Digest"
+        },
+        "inputs_root": {
+          "$ref": "common.schema.json#/$defs/Sha256Digest"
+        }
+      }
+    },
+    "text_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^t_[A-Z]{2}_[0-9]+$"
+      }
+    }
+  }
+}

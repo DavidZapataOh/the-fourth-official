@@ -1,0 +1,166 @@
+{
+  "v": 1,
+  "match_id": "m_2026_0001",
+  "seed_commitment": "sha256:daef455d45ab14786e276e7eac7f30c11ed1804c17f30eeb01a33cf9472e3b8b",
+  "pitch": {
+    "length_m": 105,
+    "width_m": 68
+  },
+  "hz": 25,
+  "duration_ms": 5400000,
+  "trajectory_sha256": "sha256:f2b202672903e9c0554a8ae6582ab2a4277f87c6e9277fc4260f13cf5266745a",
+  "teams": [
+    {
+      "id": "HAR",
+      "name": "Harbor Town",
+      "kit": {
+        "primary": "#C8102E",
+        "secondary": "#FFFFFF"
+      },
+      "players": [
+        {
+          "id": "HAR_01",
+          "number": 1,
+          "name": "HAR Player 1",
+          "role": "GK"
+        },
+        {
+          "id": "HAR_02",
+          "number": 2,
+          "name": "HAR Player 2",
+          "role": "DF"
+        },
+        {
+          "id": "HAR_03",
+          "number": 3,
+          "name": "HAR Player 3",
+          "role": "DF"
+        },
+        {
+          "id": "HAR_04",
+          "number": 4,
+          "name": "HAR Player 4",
+          "role": "DF"
+        },
+        {
+          "id": "HAR_05",
+          "number": 5,
+          "name": "HAR Player 5",
+          "role": "DF"
+        },
+        {
+          "id": "HAR_06",
+          "number": 6,
+          "name": "HAR Player 6",
+          "role": "MF"
+        },
+        {
+          "id": "HAR_07",
+          "number": 7,
+          "name": "HAR Player 7",
+          "role": "MF"
+        },
+        {
+          "id": "HAR_08",
+          "number": 8,
+          "name": "HAR Player 8",
+          "role": "MF"
+        },
+        {
+          "id": "HAR_09",
+          "number": 9,
+          "name": "HAR Player 9",
+          "role": "MF"
+        },
+        {
+          "id": "HAR_10",
+          "number": 10,
+          "name": "HAR Player 10",
+          "role": "FW"
+        },
+        {
+          "id": "HAR_11",
+          "number": 11,
+          "name": "HAR Player 11",
+          "role": "FW"
+        }
+      ]
+    },
+    {
+      "id": "VAL",
+      "name": "Valley United",
+      "kit": {
+        "primary": "#1F4E9C",
+        "secondary": "#F2C230"
+      },
+      "players": [
+        {
+          "id": "VAL_01",
+          "number": 1,
+          "name": "VAL Player 1",
+          "role": "GK"
+        },
+        {
+          "id": "VAL_02",
+          "number": 2,
+          "name": "VAL Player 2",
+          "role": "DF"
+        },
+        {
+          "id": "VAL_03",
+          "number": 3,
+          "name": "VAL Player 3",
+          "role": "DF"
+        },
+        {
+          "id": "VAL_04",
+          "number": 4,
+          "name": "VAL Player 4",
+          "role": "DF"
+        },
+        {
+          "id": "VAL_05",
+          "number": 5,
+          "name": "VAL Player 5",
+          "role": "DF"
+        },
+        {
+          "id": "VAL_06",
+          "number": 6,
+          "name": "VAL Player 6",
+          "role": "MF"
+        },
+        {
+          "id": "VAL_07",
+          "number": 7,
+          "name": "VAL Player 7",
+          "role": "MF"
+        },
+        {
+          "id": "VAL_08",
+          "number": 8,
+          "name": "VAL Player 8",
+          "role": "MF"
+        },
+        {
+          "id": "VAL_09",
+          "number": 9,
+          "name": "VAL Player 9",
+          "role": "MF"
+        },
+        {
+          "id": "VAL_10",
+          "number": 10,
+          "name": "VAL Player 10",
+          "role": "FW"
+        },
+        {
+          "id": "VAL_11",
+          "number": 11,
+          "name": "VAL Player 11",
+          "role": "FW"
+        }
+      ]
+    }
+  ]
+}

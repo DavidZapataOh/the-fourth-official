@@ -1,0 +1,18 @@
+{
+  "v": 1,
+  "match_id": "m_2026_0001",
+  "seq": 18422,
+  "clock_ms": 1893400,
+  "period": 2,
+  "type": "pass",
+  "team": "HAR",
+  "player_id": "HAR_08",
+  "target_player_id": "HAR_10",
+  "x": 61.2,
+  "y": 68.5,
+  "end_x": 78.9,
+  "end_y": 31.0,
+  "outcome": "completed",
+  "pressure": 0.42,
+  "ball_speed_kmh": 71.3
+}
