@@ -1,0 +1,307 @@
+{
+  "rfc_examples": [
+    {
+      "name": "RFC 8785 section 3.2.2 / 3.2.3 sample",
+      "input": {
+        "numbers": [333333333.3333333, 1e30, 4.5, 0.002, 1e-27],
+        "string": "€$\u000f\nA'B\"\\\\\"/",
+        "literals": [null, true, false]
+      },
+      "expected_hex": "7b226c69746572616c73223a5b6e756c6c2c747275652c66616c73655d2c226e756d62657273223a5b3333333333333333332e333333333333332c31652b33302c342e352c302e3030322c31652d32375d2c22737472696e67223a22e282ac245c75303030665c6e4127425c225c5c5c5c5c222f227d"
+    },
+    {
+      "name": "RFC 8785 section 3.2.3 sorting by UTF-16 code units",
+      "input": {
+        "€": "Euro Sign",
+        "\r": "Carriage Return",
+        "דּ": "Hebrew Letter Dalet With Dagesh",
+        "1": "One",
+        "😀": "Emoji: Grinning Face",
+        "": "Control",
+        "ö": "Latin Small Letter O With Diaeresis"
+      },
+      "expected_hex": "7b225c72223a2243617272696167652052657475726e222c2231223a224f6e65222c22c280223a22436f6e74726f6c222c22c3b6223a224c6174696e20536d616c6c204c6574746572204f205769746820446961657265736973222c22e282ac223a224575726f205369676e222c22f09f9880223a22456d6f6a693a204772696e6e696e672046616365222c22efacb3223a22486562726577204c65747465722044616c6574205769746820446167657368227d",
+      "expected_order": [
+        "Carriage Return",
+        "One",
+        "Control",
+        "Latin Small Letter O With Diaeresis",
+        "Euro Sign",
+        "Emoji: Grinning Face",
+        "Hebrew Letter Dalet With Dagesh"
+      ]
+    }
+  ],
+  "structure": [
+    {
+      "name": "empty object",
+      "input": {},
+      "expected_hex": "7b7d"
+    },
+    {
+      "name": "empty array",
+      "input": [],
+      "expected_hex": "5b5d"
+    },
+    {
+      "name": "nested objects sorted, arrays keep order",
+      "input": {
+        "b": [
+          {
+            "z": 1,
+            "a": 2
+          },
+          3,
+          [
+            {
+              "y": null,
+              "x": true
+            }
+          ]
+        ],
+        "a": {
+          "d": false,
+          "c": "x"
+        }
+      },
+      "expected_hex": "7b2261223a7b2263223a2278222c2264223a66616c73657d2c2262223a5b7b2261223a322c227a223a317d2c332c5b7b2278223a747275652c2279223a6e756c6c7d5d5d7d"
+    },
+    {
+      "name": "empty key sorts first",
+      "input": {
+        "a": 1,
+        "": 2
+      },
+      "expected_hex": "7b22223a322c2261223a317d"
+    },
+    {
+      "name": "prefix key sorts before longer key",
+      "input": {
+        "ab": 1,
+        "a": 2,
+        "aa": 3
+      },
+      "expected_hex": "7b2261223a322c226161223a332c226162223a317d"
+    },
+    {
+      "name": "number 0.1",
+      "input": 0.1,
+      "expected_hex": "302e31"
+    }
+  ],
+  "numbers": [
+    {
+      "bits": "0000000000000000",
+      "expected": "0"
+    },
+    {
+      "bits": "8000000000000000",
+      "expected": "0"
+    },
+    {
+      "bits": "0000000000000001",
+      "expected": "5e-324"
+    },
+    {
+      "bits": "8000000000000001",
+      "expected": "-5e-324"
+    },
+    {
+      "bits": "7fefffffffffffff",
+      "expected": "1.7976931348623157e+308"
+    },
+    {
+      "bits": "ffefffffffffffff",
+      "expected": "-1.7976931348623157e+308"
+    },
+    {
+      "bits": "4340000000000000",
+      "expected": "9007199254740992"
+    },
+    {
+      "bits": "c340000000000000",
+      "expected": "-9007199254740992"
+    },
+    {
+      "bits": "4430000000000000",
+      "expected": "295147905179352830000"
+    },
+    {
+      "bits": "44b52d02c7e14af5",
+      "expected": "9.999999999999997e+22"
+    },
+    {
+      "bits": "44b52d02c7e14af6",
+      "expected": "1e+23"
+    },
+    {
+      "bits": "44b52d02c7e14af7",
+      "expected": "1.0000000000000001e+23"
+    },
+    {
+      "bits": "444b1ae4d6e2ef4e",
+      "expected": "999999999999999700000"
+    },
+    {
+      "bits": "444b1ae4d6e2ef4f",
+      "expected": "999999999999999900000"
+    },
+    {
+      "bits": "444b1ae4d6e2ef50",
+      "expected": "1e+21"
+    },
+    {
+      "bits": "3eb0c6f7a0b5ed8c",
+      "expected": "9.999999999999997e-7"
+    },
+    {
+      "bits": "3eb0c6f7a0b5ed8d",
+      "expected": "0.000001"
+    },
+    {
+      "bits": "41b3de4355555553",
+      "expected": "333333333.3333332"
+    },
+    {
+      "bits": "41b3de4355555554",
+      "expected": "333333333.33333325"
+    },
+    {
+      "bits": "41b3de4355555555",
+      "expected": "333333333.3333333"
+    },
+    {
+      "bits": "41b3de4355555556",
+      "expected": "333333333.3333334"
+    },
+    {
+      "bits": "41b3de4355555557",
+      "expected": "333333333.33333343"
+    },
+    {
+      "bits": "becbf647612f3696",
+      "expected": "-0.0000033333333333333333"
+    },
+    {
+      "bits": "43143ff3c1cb0959",
+      "expected": "1424953923781206.2"
+    }
+  ],
+  "unicode": [
+    {
+      "name": "astral character as is",
+      "input": "😀",
+      "expected_hex": "22f09f988022"
+    },
+    {
+      "name": "euro sign as is",
+      "input": "€",
+      "expected_hex": "22e282ac22"
+    },
+    {
+      "name": "control U+001F lowercase hex escape",
+      "input": "\u001f",
+      "expected_hex": "225c753030316622"
+    },
+    {
+      "name": "control U+0000",
+      "input": "\u0000",
+      "expected_hex": "225c753030303022"
+    },
+    {
+      "name": "control U+000B and U+000E",
+      "input": "\u000b\u000e",
+      "expected_hex": "225c75303030625c753030306522"
+    },
+    {
+      "name": "named escapes",
+      "input": "\b\t\n\f\r",
+      "expected_hex": "225c625c745c6e5c665c7222"
+    },
+    {
+      "name": "quote and backslash",
+      "input": "\"\\",
+      "expected_hex": "225c225c5c22"
+    },
+    {
+      "name": "solidus is not escaped",
+      "input": "/",
+      "expected_hex": "222f22"
+    },
+    {
+      "name": "DEL and U+2028 as is",
+      "input": " ",
+      "expected_hex": "227fe280a822"
+    },
+    {
+      "name": "non-ASCII keys",
+      "input": {
+        "é": 1
+      },
+      "expected_hex": "7b22c3a9223a317d"
+    },
+    {
+      "name": "control character in key",
+      "input": {
+        "\u001f": 1
+      },
+      "expected_hex": "7b225c7530303166223a317d"
+    }
+  ],
+  "rejected": [
+    {
+      "name": "NaN",
+      "kind": "float_bits",
+      "value": "7fffffffffffffff"
+    },
+    {
+      "name": "Infinity",
+      "kind": "float_bits",
+      "value": "7ff0000000000000"
+    },
+    {
+      "name": "-Infinity",
+      "kind": "float_bits",
+      "value": "fff0000000000000"
+    },
+    {
+      "name": "integer 2^53",
+      "kind": "integer",
+      "value": "9007199254740992"
+    },
+    {
+      "name": "integer -2^53",
+      "kind": "integer",
+      "value": "-9007199254740992"
+    },
+    {
+      "name": "integer 2^64",
+      "kind": "integer",
+      "value": "18446744073709551616"
+    },
+    {
+      "name": "lone high surrogate in string",
+      "kind": "lone_surrogate",
+      "value": "d800",
+      "where": "string"
+    },
+    {
+      "name": "lone low surrogate in string",
+      "kind": "lone_surrogate",
+      "value": "dead",
+      "where": "string"
+    },
+    {
+      "name": "lone surrogate in key",
+      "kind": "lone_surrogate",
+      "value": "dc00",
+      "where": "key"
+    },
+    {
+      "name": "lone surrogate nested in array",
+      "kind": "lone_surrogate",
+      "value": "d83d",
+      "where": "nested"
+    }
+  ]
+}

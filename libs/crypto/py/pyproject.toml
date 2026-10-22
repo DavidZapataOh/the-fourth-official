@@ -1,0 +1,15 @@
+[project]
+name = "fourth-crypto"
+version = "0.0.0"
+description = "Strict encodings, canonical JSON, signatures and Merkle proofs with identical Python and TypeScript behavior"
+license = "Apache-2.0"
+requires-python = ">=3.13"
+dependencies = [
+    "cbor2>=6.1.5",
+    "cryptography>=50.0.2",
+    "jcs>=0.2.1",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.21,<0.13.0"]
+build-backend = "uv_build"

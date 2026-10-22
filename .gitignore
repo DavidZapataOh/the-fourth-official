@@ -13,3 +13,4 @@ build/
 coverage/
 *.tsbuildinfo
 .DS_Store
+.hypothesis/

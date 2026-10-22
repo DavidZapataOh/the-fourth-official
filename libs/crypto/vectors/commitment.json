@@ -1,0 +1,92 @@
+{
+  "commitments": [
+    {
+      "name": "empty parts",
+      "domain": "d",
+      "parts": [],
+      "expected": "4658d6abbbaf7748c172ed5a3e003cdb8997648f88724834e41f75e54520e142"
+    },
+    {
+      "name": "one empty part",
+      "domain": "d",
+      "parts": [""],
+      "expected": "1f2d4179ead10aac0e1c7798362e8aefadf058e99b042d0f329e4e1b0c757f14"
+    },
+    {
+      "name": "ab|c",
+      "domain": "d",
+      "parts": ["6162", "63"],
+      "expected": "06739f8a580f2dca2b5ef0d7a217233e86635382c5a18c2b8e5c5248ccdf96f0"
+    },
+    {
+      "name": "a|bc",
+      "domain": "d",
+      "parts": ["61", "6263"],
+      "expected": "85f3dbf564c173c148acbc746fd22d00eb69d177f61207b46665ea04caf6a15a"
+    },
+    {
+      "name": "empty then a",
+      "domain": "d",
+      "parts": ["", "61"],
+      "expected": "aa2ab9f697fc3ce558b5059ec05600d75b0bcece93421f5e33a9dfd981ddd121"
+    },
+    {
+      "name": "a then empty",
+      "domain": "d",
+      "parts": ["61", ""],
+      "expected": "9e78fa0797632815b3248e978c6abd364512c048ab192703671c0f188d3fe4fd"
+    },
+    {
+      "name": "seed",
+      "domain": "fourth/seed/v1",
+      "parts": [
+        "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+        "6d617463682d30303031"
+      ],
+      "expected": "fed2811e93dd13e4b35504bfca8b4809d0757d9533f95a9287fd9ba6496e90b6"
+    },
+    {
+      "name": "call",
+      "domain": "fourth/call/v1",
+      "parts": [
+        "696e636964656e742d303432",
+        "70656e616c7479",
+        "3830",
+        "a1b2c3d4e5f60718293a4b5c6d7e8f90"
+      ],
+      "expected": "828e3669d138b0e4fae2e1317a2e0ad9973e50c155e0f035a5a0d66a3df84078"
+    },
+    {
+      "name": "non-ascii domain",
+      "domain": "d\u00e9/v1",
+      "parts": ["78"],
+      "expected": "4956ebc5105575668fac3f6abef526d42f165dbd729e3ca12efb70e32de59064"
+    }
+  ],
+  "chains": [
+    {
+      "name": "genesis with data",
+      "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+      "data": "6576656e742d31",
+      "expected": "14fb0215817c616d22c1257cbf4772c9a6162d63ef0dd9a6a92d52ffb9d3be9a"
+    },
+    {
+      "name": "second link",
+      "prev": "14fb0215817c616d22c1257cbf4772c9a6162d63ef0dd9a6a92d52ffb9d3be9a",
+      "data": "6576656e742d32",
+      "expected": "7f793a54a85bb2d2169fdcebfd4de49b9c290e40bd05b9471dae6ecd04820e1d"
+    },
+    {
+      "name": "empty data",
+      "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+      "data": "",
+      "expected": "8cc2615ad84ee4005bc7effadfe70f2f218fa718cdfc56ef5a1399220c0c5188"
+    },
+    {
+      "name": "all-ff prev",
+      "prev": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "data": "000102",
+      "expected": "a0259c81bea60ef9b4ef308377f21ed73add28bed5c2760b9dcb5907d159be5f"
+    }
+  ]
+}

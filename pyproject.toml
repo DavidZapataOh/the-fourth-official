@@ -11,6 +11,7 @@ dependencies = []
 dev = [
   "datamodel-code-generator>=0.86.0",
   "hypothesis",
+  "pycose>=1.1.0",
   "pyright",
   "pytest",
   "pyyaml",

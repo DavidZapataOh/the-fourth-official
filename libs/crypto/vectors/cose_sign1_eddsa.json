@@ -1,0 +1,36 @@
+{
+  "source": "cose-wg/Examples (Unlicense)",
+  "commit": "53c9d634333bb4f529d78f5980fffa2667ee2c12",
+  "note": "eddsa-sig-02 (Ed448) is not converted: only Ed25519 is supported. sign1-tests are ES256 messages and must be rejected. The ES256 cases carry the Ed25519 public key of eddsa-sig-01, not the upstream P-256 key; they test that a non-EdDSA algorithm is rejected.",
+  "cases": [
+    {
+      "name": "eddsa-sig-01",
+      "source": "eddsa-examples/eddsa-sig-01.json",
+      "public": "d75a980182b10ab7d54bfed3c964073a0ee172f3daa62325af021a68f707511a",
+      "payload": "546869732069732074686520636f6e74656e742e",
+      "message": "d28445a201270300a10442313154546869732069732074686520636f6e74656e742e58407142fd2ff96d56db85bee905a76ba1d0b7321a95c8c4d3607c5781932b7afb8711497dfa751bf40b58b3bcc32300b1487f3db34085eef013bf08f4a44d6fef0d",
+      "valid": true
+    },
+    {
+      "name": "sign-pass-01-not-eddsa",
+      "source": "sign1-tests/sign-pass-01.json",
+      "public": "d75a980182b10ab7d54bfed3c964073a0ee172f3daa62325af021a68f707511a",
+      "message": "d28441a0a201260442313154546869732069732074686520636f6e74656e742e584087db0d2e5571843b78ac33ecb2830df7b6e0a4d5b7376de336b23c591c90c425317e56127fbe04370097ce347087b233bf722b64072beb4486bda4031d27244f",
+      "valid": false
+    },
+    {
+      "name": "sign-pass-02-not-eddsa",
+      "source": "sign1-tests/sign-pass-02.json",
+      "public": "d75a980182b10ab7d54bfed3c964073a0ee172f3daa62325af021a68f707511a",
+      "message": "d28443a10126a10442313154546869732069732074686520636f6e74656e742e584010729cd711cb3813d8d8e944a8da7111e7b258c9bdca6135f7ae1adbee9509891267837e1e33bd36c150326ae62755c6bd8e540c3e8f92d7d225e8db72b8820b",
+      "valid": false
+    },
+    {
+      "name": "sign-pass-03-not-eddsa",
+      "source": "sign1-tests/sign-pass-03.json",
+      "public": "d75a980182b10ab7d54bfed3c964073a0ee172f3daa62325af021a68f707511a",
+      "message": "8443a10126a10442313154546869732069732074686520636f6e74656e742e58408eb33e4ca31d1c465ab05aac34cc6b23d58fef5c083106c4d25a91aef0b0117e2af9a291aa32e14ab834dc56ed2a223444547e01f11d3b0916e5a4c345cacb36",
+      "valid": false
+    }
+  ]
+}
