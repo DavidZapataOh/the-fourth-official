@@ -1,0 +1,2 @@
+Error: verifying with issuer "sigstore.dev"
+Error: the provided digest does not match the attested subject

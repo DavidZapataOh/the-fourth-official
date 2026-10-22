@@ -1,0 +1,29 @@
+[
+  {
+    "verificationResult": {
+      "statement": {
+        "subject": [
+          {
+            "name": "ghcr.io/owner/repo/provenance-demo",
+            "digest": {
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          }
+        ]
+      },
+      "signature": {
+        "certificate": {
+          "certificateIssuer": "CN=sigstore-intermediate,O=sigstore.dev",
+          "githubWorkflowName": "Provenance",
+          "githubWorkflowRef": "refs/heads/main",
+          "githubWorkflowRepository": "owner/repo",
+          "githubWorkflowTrigger": "workflow_dispatch",
+          "buildSignerURI": "https://github.com/owner/repo/.github/workflows/provenance.yml@refs/heads/main",
+          "runnerEnvironment": "github-hosted",
+          "sourceRepositoryURI": "https://github.com/owner/repo",
+          "sourceRepositoryRef": "refs/heads/main"
+        }
+      }
+    }
+  }
+]
