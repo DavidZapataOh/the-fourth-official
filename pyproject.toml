@@ -37,11 +37,11 @@ select = ["E", "F", "I", "UP", "B", "SIM", "C4", "PL"]
 "**/tests/**" = ["PLR2004"]
 
 [tool.pytest.ini_options]
-testpaths = ["tests", "libs", "infra"]
+testpaths = ["tests", "libs", "infra", "tools"]
 addopts = "-ra --strict-markers"
 
 [tool.pyright]
-include = ["tests", "libs", "infra"]
+include = ["tests", "libs", "infra", "tools"]
 typeCheckingMode = "basic"
 strict = ["libs"]
 ignore = ["libs/*/py/src/*/models"]
