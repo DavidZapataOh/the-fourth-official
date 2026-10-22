@@ -17,6 +17,7 @@ class Verification:
     source_ref: str
     signer_workflow: str
     subject_digest: str
+    repository_id: str
 
 
 def verify_image(  # noqa: PLR0913
@@ -58,6 +59,7 @@ def _parse(output: str) -> Verification:
             source_ref=certificate["sourceRepositoryRef"],
             signer_workflow=certificate["buildSignerURI"],
             subject_digest=f"sha256:{digest}",
+            repository_id=certificate["sourceRepositoryIdentifier"],
         )
     except (KeyError, IndexError) as error:
         raise ProvenanceError(f"unexpected verification output: missing {error}") from error

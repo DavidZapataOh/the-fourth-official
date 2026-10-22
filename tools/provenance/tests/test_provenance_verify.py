@@ -11,8 +11,9 @@ assert spec and spec.loader
 verify = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(verify)
 
-REF = "oci://ghcr.io/owner/repo/provenance-demo@sha256:" + "a" * 64
-REPO = "owner/repo"
+DIGEST = "2f4d334c66e35b62d53f77ab8425dd94e21d082a90bd927f51aa1cd61ce2d851"
+REF = "oci://ghcr.io/davidzapataoh/the-fourth-official/provenance-demo@sha256:" + DIGEST
+REPO = "DavidZapataOh/the-fourth-official"
 
 
 @pytest.fixture
@@ -44,10 +45,14 @@ def test_parses_certificate_fields_from_json(gh):
     executable, _ = gh(stdout=ok_output())
     result = verify.verify_image(REF, REPO, gh=executable)
     assert result == verify.Verification(
-        source_repository="https://github.com/owner/repo",
+        source_repository="https://github.com/DavidZapataOh/the-fourth-official",
         source_ref="refs/heads/main",
-        signer_workflow="https://github.com/owner/repo/.github/workflows/provenance.yml@refs/heads/main",
-        subject_digest="sha256:" + "a" * 64,
+        signer_workflow=(
+            "https://github.com/DavidZapataOh/the-fourth-official"
+            "/.github/workflows/provenance.yml@refs/heads/main"
+        ),
+        subject_digest="sha256:" + DIGEST,
+        repository_id="1427833177",
     )
 
 

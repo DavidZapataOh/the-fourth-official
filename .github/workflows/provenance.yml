@@ -43,4 +43,8 @@ jobs:
           subject-name: ${{ steps.image.outputs.name }}
           subject-digest: ${{ steps.push.outputs.digest }}
           push-to-registry: true
+      - if: inputs.attest
+        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6 # v4.2.2
+        with:
+          subject-path: tools/provenance/image/hello.txt
       - run: echo "${{ steps.image.outputs.name }}@${{ steps.push.outputs.digest }}" >> "$GITHUB_STEP_SUMMARY"
