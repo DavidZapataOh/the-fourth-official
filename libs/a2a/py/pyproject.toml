@@ -1,0 +1,18 @@
+[project]
+name = "fourth-a2a"
+version = "0.0.0"
+description = "Signed A2A Agent Cards with an independent verifier and Entra token validation"
+license = "Apache-2.0"
+requires-python = ">=3.13"
+dependencies = [
+    "a2a-sdk[http-server]>=1.0.0",
+    "fourth-crypto",
+    "pyjwt[crypto]>=2.15.1",
+]
+
+[tool.uv.sources]
+fourth-crypto = { workspace = true }
+
+[build-system]
+requires = ["uv_build>=0.12.21,<0.13.0"]
+build-backend = "uv_build"

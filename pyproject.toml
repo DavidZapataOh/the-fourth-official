@@ -9,8 +9,12 @@ dependencies = []
 
 [dependency-groups]
 dev = [
+  "azure-ai-projects>=2.5.0",
+  "azure-identity>=1.25.0",
   "datamodel-code-generator>=0.86.0",
+  "httpx>=0.28.1",
   "hypothesis",
+  "mcp>=2.3.0",
   "pycose>=1.1.0",
   "pyright",
   "pytest",
@@ -18,6 +22,7 @@ dev = [
   "ruff",
   "types-jsonschema>=4.26.0.20261006",
   "types-pyyaml",
+  "uvicorn>=0.54.0",
 ]
 
 [tool.uv]

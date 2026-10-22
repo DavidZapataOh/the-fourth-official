@@ -50,3 +50,12 @@ def test_adr_0005_records_certificate_fields():
     text = path.read_text()
     for field in ("sourceRepositoryURI", "sourceRepositoryRef", "buildSignerURI"):
         assert field in text, field
+
+
+def test_adr_0006_names_the_a2a_hosting_choice():
+    [path] = ROOT.glob("docs/adr/0006-*.md")
+    text = path.read_text()
+    assert re.search(r"^Decision: keep .*A2A server.*Foundry", text, re.MULTILINE)
+    paths = ("client_to_server", "foundry_to_server", "client_to_foundry", "foundry_to_mcp")
+    for path_name in paths:
+        assert path_name in text, path_name
