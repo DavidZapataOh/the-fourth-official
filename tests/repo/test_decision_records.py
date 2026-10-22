@@ -43,3 +43,10 @@ def test_adr_0004_exists_and_records_the_policy_hash():
     text = path.read_text()
     assert re.search(r"\b[0-9a-f]{64}\b", text), "policy hash (64 hex characters) missing"
     assert "North Europe" in text
+
+
+def test_adr_0005_records_certificate_fields():
+    [path] = ROOT.glob("docs/adr/0005-*.md")
+    text = path.read_text()
+    for field in ("sourceRepositoryURI", "sourceRepositoryRef", "buildSignerURI"):
+        assert field in text, field
