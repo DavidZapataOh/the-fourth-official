@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "environmentName": { "value": "${AZURE_ENV_NAME}" },
+    "location": { "value": "${AZURE_LOCATION}" },
+    "principalId": { "value": "${AZURE_PRINCIPAL_ID}" },
+    "cosmosLocation": { "value": "${COSMOS_LOCATION=}" },
+    "budgetContactEmail": { "value": "${BUDGET_CONTACT_EMAIL=}" },
+    "budgetAmount": { "value": "${BUDGET_AMOUNT=200}" },
+    "budgetStartDate": { "value": "${BUDGET_START_DATE=2026-10-01}" },
+    "budgetEndDate": { "value": "${BUDGET_END_DATE=2026-12-31}" }
+  }
+}
