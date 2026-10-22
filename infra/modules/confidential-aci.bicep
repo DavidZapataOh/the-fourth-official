@@ -23,6 +23,7 @@ param ccePolicy string = ''
 param maaEndpoint string
 
 var sidecarPort = '8081'
+var skrUrl = 'http://localhost:8081/attest/maa'
 
 resource group 'Microsoft.ContainerInstance/containerGroups@2026-07-01' = {
   name: name
@@ -64,7 +65,7 @@ resource group 'Microsoft.ContainerInstance/containerGroups@2026-07-01' = {
             }
             {
               name: 'SKR_URL'
-              value: 'http://localhost:${sidecarPort}/attest/maa'
+              value: skrUrl
             }
           ]
           resources: {

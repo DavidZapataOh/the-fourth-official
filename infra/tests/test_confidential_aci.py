@@ -76,3 +76,11 @@ def test_acr_pull_uses_managed_identity(group, template):
     assert group["identity"]["type"] == "UserAssigned"
     assert "identityId" in str(group["identity"]["userAssignedIdentities"])
     assert template["parameters"]["identityId"]["type"] == "string"
+
+
+def test_environment_values_are_literals_or_plain_references(group):
+    """The policy generator resolves parameters and variables but not functions such as format."""
+    plain = re.compile(r"(?!\[)|\[(parameters|variables)\('\w+'\)\]")
+    for container in group["properties"]["containers"]:
+        for variable in container["properties"].get("environmentVariables", []):
+            assert plain.fullmatch(variable["value"]), variable

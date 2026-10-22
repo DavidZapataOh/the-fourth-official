@@ -28,11 +28,9 @@ def make_handler(skr_url: str, maa_endpoint: str) -> type[BaseHTTPRequestHandler
                 self._send(404, {"error": "not found"})
 
         def _token(self):
+            runtime_data = json.dumps({"nonce": os.urandom(16).hex()}).encode()
             body = json.dumps(
-                {
-                    "maa_endpoint": host,
-                    "runtime_data": base64.b64encode(os.urandom(16)).decode(),
-                }
+                {"maa_endpoint": host, "runtime_data": base64.b64encode(runtime_data).decode()}
             ).encode()
             request = urllib.request.Request(
                 skr_url, data=body, headers={"Content-Type": "application/json"}
@@ -41,7 +39,8 @@ def make_handler(skr_url: str, maa_endpoint: str) -> type[BaseHTTPRequestHandler
                 with urllib.request.urlopen(request, timeout=30) as response:
                     self._send(response.status, json.load(response))
             except urllib.error.HTTPError as error:
-                self._send(502, {"error": f"sidecar returned {error.code}"})
+                detail = error.read(2000).decode(errors="replace")
+                self._send(502, {"error": f"sidecar returned {error.code}: {detail}"})
             except (OSError, ValueError) as error:
                 self._send(502, {"error": f"sidecar unreachable: {error}"})
 
