@@ -1,0 +1,258 @@
+{
+  "description": "A receipt from a live Azure Confidential Ledger with the service identity certificate and application claims, saved before the ledger was deleted.",
+  "source": "Azure Confidential Ledger fourth-proofs-b7549b (eastus), Public, written with azure-confidentialledger 1.1.1 at data plane API 2026-02-23 by libs/proofs/py/scripts/live_run.py",
+  "ledger": {
+    "name": "fourth-proofs-b7549b",
+    "region": "eastus",
+    "sku": "Standard",
+    "transaction_id": "2.63",
+    "recorded_at": "2026-10-22T21:45:51+00:00",
+    "arm_api_version": "2026-02-23",
+    "data_plane_api_version": "2026-02-23",
+    "sdk": "azure-confidentialledger 1.1.1"
+  },
+  "claim": {
+    "decision": "goal_stands",
+    "incident": "m4-17",
+    "match": "Harbour Town v Northbridge",
+    "minute": 63,
+    "review": "offside"
+  },
+  "bases": {
+    "live_receipt": {
+      "source": "Azure Confidential Ledger fourth-proofs-b7549b (eastus), Public, written with azure-confidentialledger 1.1.1 at data plane API 2026-02-23 by libs/proofs/py/scripts/live_run.py",
+      "receipt": {
+        "cert": "-----BEGIN CERTIFICATE-----\nMIICMDCCAdWgAwIBAgIRAKpQ7uO0Qb7u6LHqp+SPD/QwCgYIKoZIzj0EAwIwFjEU\nMBIGA1UEAwwLQ0NGIFNlcnZpY2UwHhcNMjYxMDIyMjA0MzQ5WhcNMjcwMTIwMjA0\nMzQ4WjATMREwDwYDVQQDDAhDQ0YgTm9kZTBZMBMGByqGSM49AgEGCCqGSM49AwEH\nA0IABJpDgPYwfgtE09jVDy0QTA8YQv5xlu3hfbmMx3Nm7NCwkkyE26kNVf95V69J\nxxAELF07xyzFkgoMJqqj815op5ujggEFMIIBATAMBgNVHRMBAf8EAjAAMB0GA1Ud\nDgQWBBSfbD/1+caYWYsxLexeCNVSODJxfzAfBgNVHSMEGDAWgBTGMAQRlTI/DqH9\nLS6sLBDhSgEO8zCBsAYDVR0RBIGoMIGlgjFmb3VydGgtcHJvb2ZzLWI3NTQ5Yi5w\ncm9kLnByaXZhdGUuYXp1cmVsZWRnZXIuY29tgjJmb3VydGgtcHJvb2ZzLWI3NTQ5\nYi5jb25maWRlbnRpYWwtbGVkZ2VyLmF6dXJlLmNvbYcECgIBQ4IgZm91cnRoLXBy\nb29mcy1iNzU0OWItYWNjbGVkZ2VyLTKCFGZvdXJ0aC1wcm9vZnMtYjc1NDliMAoG\nCCqGSM49BAMCA0kAMEYCIQDXHdxeWKRl+Cw1ybyfLnYmTdZNwrNx7ET9Fw29teIx\nBAIhAMK4JsG6vFhXRPQK/DN4y/+WSRz54MMSVG63vq28ex0V\n-----END CERTIFICATE-----\n",
+        "leafComponents": {
+          "claimsDigest": "87ee8b0599d4bd04bc61fd70dedad92e62adb264f62095ea4c2c4210fc1225c7",
+          "commitEvidence": "ce:2.63:40e84f26e78352e4f752b9ba968805cf9409f8f88a7acbc4cdeee363244d5ab8",
+          "writeSetDigest": "1f690f3f404eb7db2ba1950cdff42011db5bcdfeb4558444026f59659c88e248"
+        },
+        "nodeId": "166a0042f47c9ffc4d32f7c57edb52c869a96d2b2673a09a57cf058161543557",
+        "proof": [
+          {
+            "left": "3a1b55fd6891048a767fec5aa9661a93179df3162ec190838d6ea48b42aa7693"
+          },
+          {
+            "left": "529e589132afcc7b03370d01523d0dd6305cf81868ac6909db580da3cebf16a9"
+          },
+          {
+            "left": "a22239891d5327335600b74482040dc45ddf49aca06d0c959e4fbba297b22f69"
+          },
+          {
+            "left": "9adf2a229750b5a8ff2ac93760a52070ccc75dadb47f1c141205eb668f8e4d13"
+          },
+          {
+            "left": "b9c203b72d4bcf60a389fd58774c9c6b024f2e42147d614acaaf48fbdb469292"
+          },
+          {
+            "left": "d8f7618d2bd5afb37f2a0e047960770cc6460dcd87d7836bc4fba8bac27e68a1"
+          }
+        ],
+        "signature": "MEYCIQD9SjVh06G1ehnYGbVQEN8lgfQmsFz6KkitG93AYAeemAIhAI9OlO4c6l0ZMkVfk5G4uCszM/egPWiW/TTeSC7Dl+kt"
+      },
+      "service_certificate": "-----BEGIN CERTIFICATE-----\nMIIBkTCCATegAwIBAgIRALOwhjWLWf5SkIJgTMU528swCgYIKoZIzj0EAwIwFjEU\nMBIGA1UEAwwLQ0NGIFNlcnZpY2UwHhcNMjYxMDIyMjA0MzU3WhcNMjcwMTIwMjA0\nMzU2WjAWMRQwEgYDVQQDDAtDQ0YgU2VydmljZTBZMBMGByqGSM49AgEGCCqGSM49\nAwEHA0IABPg19TiPrHTL/+KgY1uTdGY9W+nZHPd6cYyS4Bhs8RO+xGMqTmpuoBHi\nFijWvtftYkCBMyYuGfmVn2HQROg64xKjZjBkMBIGA1UdEwEB/wQIMAYBAf8CAQEw\nDgYDVR0PAQH/BAQDAgKEMB0GA1UdDgQWBBTGMAQRlTI/DqH9LS6sLBDhSgEO8zAf\nBgNVHSMEGDAWgBTGMAQRlTI/DqH9LS6sLBDhSgEO8zAKBggqhkjOPQQDAgNIADBF\nAiEAjtRilC7FR3J3uGHnZdZkINpZDROEaS1TTIka8QuFA/cCIE0F7s+9xuVgaxAk\nBtQ8G1ROnjc7lXua+MzulRptdR+W\n-----END CERTIFICATE-----\n",
+      "application_claims": [
+        {
+          "kind": "LedgerEntry",
+          "ledgerEntry": {
+            "collectionId": "subledger:0",
+            "contents": "{\"decision\":\"goal_stands\",\"incident\":\"m4-17\",\"match\":\"Harbour Town v Northbridge\",\"minute\":63,\"review\":\"offside\"}",
+            "protocol": "LedgerEntryV1",
+            "secretKey": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+          }
+        }
+      ]
+    }
+  },
+  "cases": [
+    {
+      "name": "live_receipt/valid",
+      "source": "Azure Confidential Ledger fourth-proofs-b7549b (eastus), Public, written with azure-confidentialledger 1.1.1 at data plane API 2026-02-23 by libs/proofs/py/scripts/live_run.py",
+      "receipt": {
+        "cert": "-----BEGIN CERTIFICATE-----\nMIICMDCCAdWgAwIBAgIRAKpQ7uO0Qb7u6LHqp+SPD/QwCgYIKoZIzj0EAwIwFjEU\nMBIGA1UEAwwLQ0NGIFNlcnZpY2UwHhcNMjYxMDIyMjA0MzQ5WhcNMjcwMTIwMjA0\nMzQ4WjATMREwDwYDVQQDDAhDQ0YgTm9kZTBZMBMGByqGSM49AgEGCCqGSM49AwEH\nA0IABJpDgPYwfgtE09jVDy0QTA8YQv5xlu3hfbmMx3Nm7NCwkkyE26kNVf95V69J\nxxAELF07xyzFkgoMJqqj815op5ujggEFMIIBATAMBgNVHRMBAf8EAjAAMB0GA1Ud\nDgQWBBSfbD/1+caYWYsxLexeCNVSODJxfzAfBgNVHSMEGDAWgBTGMAQRlTI/DqH9\nLS6sLBDhSgEO8zCBsAYDVR0RBIGoMIGlgjFmb3VydGgtcHJvb2ZzLWI3NTQ5Yi5w\ncm9kLnByaXZhdGUuYXp1cmVsZWRnZXIuY29tgjJmb3VydGgtcHJvb2ZzLWI3NTQ5\nYi5jb25maWRlbnRpYWwtbGVkZ2VyLmF6dXJlLmNvbYcECgIBQ4IgZm91cnRoLXBy\nb29mcy1iNzU0OWItYWNjbGVkZ2VyLTKCFGZvdXJ0aC1wcm9vZnMtYjc1NDliMAoG\nCCqGSM49BAMCA0kAMEYCIQDXHdxeWKRl+Cw1ybyfLnYmTdZNwrNx7ET9Fw29teIx\nBAIhAMK4JsG6vFhXRPQK/DN4y/+WSRz54MMSVG63vq28ex0V\n-----END CERTIFICATE-----\n",
+        "leafComponents": {
+          "claimsDigest": "87ee8b0599d4bd04bc61fd70dedad92e62adb264f62095ea4c2c4210fc1225c7",
+          "commitEvidence": "ce:2.63:40e84f26e78352e4f752b9ba968805cf9409f8f88a7acbc4cdeee363244d5ab8",
+          "writeSetDigest": "1f690f3f404eb7db2ba1950cdff42011db5bcdfeb4558444026f59659c88e248"
+        },
+        "nodeId": "166a0042f47c9ffc4d32f7c57edb52c869a96d2b2673a09a57cf058161543557",
+        "proof": [
+          {
+            "left": "3a1b55fd6891048a767fec5aa9661a93179df3162ec190838d6ea48b42aa7693"
+          },
+          {
+            "left": "529e589132afcc7b03370d01523d0dd6305cf81868ac6909db580da3cebf16a9"
+          },
+          {
+            "left": "a22239891d5327335600b74482040dc45ddf49aca06d0c959e4fbba297b22f69"
+          },
+          {
+            "left": "9adf2a229750b5a8ff2ac93760a52070ccc75dadb47f1c141205eb668f8e4d13"
+          },
+          {
+            "left": "b9c203b72d4bcf60a389fd58774c9c6b024f2e42147d614acaaf48fbdb469292"
+          },
+          {
+            "left": "d8f7618d2bd5afb37f2a0e047960770cc6460dcd87d7836bc4fba8bac27e68a1"
+          }
+        ],
+        "signature": "MEYCIQD9SjVh06G1ehnYGbVQEN8lgfQmsFz6KkitG93AYAeemAIhAI9OlO4c6l0ZMkVfk5G4uCszM/egPWiW/TTeSC7Dl+kt"
+      },
+      "service_certificate": "-----BEGIN CERTIFICATE-----\nMIIBkTCCATegAwIBAgIRALOwhjWLWf5SkIJgTMU528swCgYIKoZIzj0EAwIwFjEU\nMBIGA1UEAwwLQ0NGIFNlcnZpY2UwHhcNMjYxMDIyMjA0MzU3WhcNMjcwMTIwMjA0\nMzU2WjAWMRQwEgYDVQQDDAtDQ0YgU2VydmljZTBZMBMGByqGSM49AgEGCCqGSM49\nAwEHA0IABPg19TiPrHTL/+KgY1uTdGY9W+nZHPd6cYyS4Bhs8RO+xGMqTmpuoBHi\nFijWvtftYkCBMyYuGfmVn2HQROg64xKjZjBkMBIGA1UdEwEB/wQIMAYBAf8CAQEw\nDgYDVR0PAQH/BAQDAgKEMB0GA1UdDgQWBBTGMAQRlTI/DqH9LS6sLBDhSgEO8zAf\nBgNVHSMEGDAWgBTGMAQRlTI/DqH9LS6sLBDhSgEO8zAKBggqhkjOPQQDAgNIADBF\nAiEAjtRilC7FR3J3uGHnZdZkINpZDROEaS1TTIka8QuFA/cCIE0F7s+9xuVgaxAk\nBtQ8G1ROnjc7lXua+MzulRptdR+W\n-----END CERTIFICATE-----\n",
+      "application_claims": [
+        {
+          "kind": "LedgerEntry",
+          "ledgerEntry": {
+            "collectionId": "subledger:0",
+            "contents": "{\"decision\":\"goal_stands\",\"incident\":\"m4-17\",\"match\":\"Harbour Town v Northbridge\",\"minute\":63,\"review\":\"offside\"}",
+            "protocol": "LedgerEntryV1",
+            "secretKey": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+          }
+        }
+      ],
+      "valid": true
+    },
+    {
+      "name": "live_receipt/claims_contents_changed",
+      "source": "Azure Confidential Ledger fourth-proofs-b7549b (eastus), Public, written with azure-confidentialledger 1.1.1 at data plane API 2026-02-23 by libs/proofs/py/scripts/live_run.py",
+      "receipt": {
+        "cert": "-----BEGIN CERTIFICATE-----\nMIICMDCCAdWgAwIBAgIRAKpQ7uO0Qb7u6LHqp+SPD/QwCgYIKoZIzj0EAwIwFjEU\nMBIGA1UEAwwLQ0NGIFNlcnZpY2UwHhcNMjYxMDIyMjA0MzQ5WhcNMjcwMTIwMjA0\nMzQ4WjATMREwDwYDVQQDDAhDQ0YgTm9kZTBZMBMGByqGSM49AgEGCCqGSM49AwEH\nA0IABJpDgPYwfgtE09jVDy0QTA8YQv5xlu3hfbmMx3Nm7NCwkkyE26kNVf95V69J\nxxAELF07xyzFkgoMJqqj815op5ujggEFMIIBATAMBgNVHRMBAf8EAjAAMB0GA1Ud\nDgQWBBSfbD/1+caYWYsxLexeCNVSODJxfzAfBgNVHSMEGDAWgBTGMAQRlTI/DqH9\nLS6sLBDhSgEO8zCBsAYDVR0RBIGoMIGlgjFmb3VydGgtcHJvb2ZzLWI3NTQ5Yi5w\ncm9kLnByaXZhdGUuYXp1cmVsZWRnZXIuY29tgjJmb3VydGgtcHJvb2ZzLWI3NTQ5\nYi5jb25maWRlbnRpYWwtbGVkZ2VyLmF6dXJlLmNvbYcECgIBQ4IgZm91cnRoLXBy\nb29mcy1iNzU0OWItYWNjbGVkZ2VyLTKCFGZvdXJ0aC1wcm9vZnMtYjc1NDliMAoG\nCCqGSM49BAMCA0kAMEYCIQDXHdxeWKRl+Cw1ybyfLnYmTdZNwrNx7ET9Fw29teIx\nBAIhAMK4JsG6vFhXRPQK/DN4y/+WSRz54MMSVG63vq28ex0V\n-----END CERTIFICATE-----\n",
+        "leafComponents": {
+          "claimsDigest": "87ee8b0599d4bd04bc61fd70dedad92e62adb264f62095ea4c2c4210fc1225c7",
+          "commitEvidence": "ce:2.63:40e84f26e78352e4f752b9ba968805cf9409f8f88a7acbc4cdeee363244d5ab8",
+          "writeSetDigest": "1f690f3f404eb7db2ba1950cdff42011db5bcdfeb4558444026f59659c88e248"
+        },
+        "nodeId": "166a0042f47c9ffc4d32f7c57edb52c869a96d2b2673a09a57cf058161543557",
+        "proof": [
+          {
+            "left": "3a1b55fd6891048a767fec5aa9661a93179df3162ec190838d6ea48b42aa7693"
+          },
+          {
+            "left": "529e589132afcc7b03370d01523d0dd6305cf81868ac6909db580da3cebf16a9"
+          },
+          {
+            "left": "a22239891d5327335600b74482040dc45ddf49aca06d0c959e4fbba297b22f69"
+          },
+          {
+            "left": "9adf2a229750b5a8ff2ac93760a52070ccc75dadb47f1c141205eb668f8e4d13"
+          },
+          {
+            "left": "b9c203b72d4bcf60a389fd58774c9c6b024f2e42147d614acaaf48fbdb469292"
+          },
+          {
+            "left": "d8f7618d2bd5afb37f2a0e047960770cc6460dcd87d7836bc4fba8bac27e68a1"
+          }
+        ],
+        "signature": "MEYCIQD9SjVh06G1ehnYGbVQEN8lgfQmsFz6KkitG93AYAeemAIhAI9OlO4c6l0ZMkVfk5G4uCszM/egPWiW/TTeSC7Dl+kt"
+      },
+      "service_certificate": "-----BEGIN CERTIFICATE-----\nMIIBkTCCATegAwIBAgIRALOwhjWLWf5SkIJgTMU528swCgYIKoZIzj0EAwIwFjEU\nMBIGA1UEAwwLQ0NGIFNlcnZpY2UwHhcNMjYxMDIyMjA0MzU3WhcNMjcwMTIwMjA0\nMzU2WjAWMRQwEgYDVQQDDAtDQ0YgU2VydmljZTBZMBMGByqGSM49AgEGCCqGSM49\nAwEHA0IABPg19TiPrHTL/+KgY1uTdGY9W+nZHPd6cYyS4Bhs8RO+xGMqTmpuoBHi\nFijWvtftYkCBMyYuGfmVn2HQROg64xKjZjBkMBIGA1UdEwEB/wQIMAYBAf8CAQEw\nDgYDVR0PAQH/BAQDAgKEMB0GA1UdDgQWBBTGMAQRlTI/DqH9LS6sLBDhSgEO8zAf\nBgNVHSMEGDAWgBTGMAQRlTI/DqH9LS6sLBDhSgEO8zAKBggqhkjOPQQDAgNIADBF\nAiEAjtRilC7FR3J3uGHnZdZkINpZDROEaS1TTIka8QuFA/cCIE0F7s+9xuVgaxAk\nBtQ8G1ROnjc7lXua+MzulRptdR+W\n-----END CERTIFICATE-----\n",
+      "application_claims": [
+        {
+          "kind": "LedgerEntry",
+          "ledgerEntry": {
+            "collectionId": "subledger:0",
+            "contents": "{}",
+            "protocol": "LedgerEntryV1",
+            "secretKey": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+          }
+        }
+      ],
+      "valid": false
+    },
+    {
+      "name": "live_receipt/signature_last_byte",
+      "source": "Azure Confidential Ledger fourth-proofs-b7549b (eastus), Public, written with azure-confidentialledger 1.1.1 at data plane API 2026-02-23 by libs/proofs/py/scripts/live_run.py",
+      "receipt": {
+        "cert": "-----BEGIN CERTIFICATE-----\nMIICMDCCAdWgAwIBAgIRAKpQ7uO0Qb7u6LHqp+SPD/QwCgYIKoZIzj0EAwIwFjEU\nMBIGA1UEAwwLQ0NGIFNlcnZpY2UwHhcNMjYxMDIyMjA0MzQ5WhcNMjcwMTIwMjA0\nMzQ4WjATMREwDwYDVQQDDAhDQ0YgTm9kZTBZMBMGByqGSM49AgEGCCqGSM49AwEH\nA0IABJpDgPYwfgtE09jVDy0QTA8YQv5xlu3hfbmMx3Nm7NCwkkyE26kNVf95V69J\nxxAELF07xyzFkgoMJqqj815op5ujggEFMIIBATAMBgNVHRMBAf8EAjAAMB0GA1Ud\nDgQWBBSfbD/1+caYWYsxLexeCNVSODJxfzAfBgNVHSMEGDAWgBTGMAQRlTI/DqH9\nLS6sLBDhSgEO8zCBsAYDVR0RBIGoMIGlgjFmb3VydGgtcHJvb2ZzLWI3NTQ5Yi5w\ncm9kLnByaXZhdGUuYXp1cmVsZWRnZXIuY29tgjJmb3VydGgtcHJvb2ZzLWI3NTQ5\nYi5jb25maWRlbnRpYWwtbGVkZ2VyLmF6dXJlLmNvbYcECgIBQ4IgZm91cnRoLXBy\nb29mcy1iNzU0OWItYWNjbGVkZ2VyLTKCFGZvdXJ0aC1wcm9vZnMtYjc1NDliMAoG\nCCqGSM49BAMCA0kAMEYCIQDXHdxeWKRl+Cw1ybyfLnYmTdZNwrNx7ET9Fw29teIx\nBAIhAMK4JsG6vFhXRPQK/DN4y/+WSRz54MMSVG63vq28ex0V\n-----END CERTIFICATE-----\n",
+        "leafComponents": {
+          "claimsDigest": "87ee8b0599d4bd04bc61fd70dedad92e62adb264f62095ea4c2c4210fc1225c7",
+          "commitEvidence": "ce:2.63:40e84f26e78352e4f752b9ba968805cf9409f8f88a7acbc4cdeee363244d5ab8",
+          "writeSetDigest": "1f690f3f404eb7db2ba1950cdff42011db5bcdfeb4558444026f59659c88e248"
+        },
+        "nodeId": "166a0042f47c9ffc4d32f7c57edb52c869a96d2b2673a09a57cf058161543557",
+        "proof": [
+          {
+            "left": "3a1b55fd6891048a767fec5aa9661a93179df3162ec190838d6ea48b42aa7693"
+          },
+          {
+            "left": "529e589132afcc7b03370d01523d0dd6305cf81868ac6909db580da3cebf16a9"
+          },
+          {
+            "left": "a22239891d5327335600b74482040dc45ddf49aca06d0c959e4fbba297b22f69"
+          },
+          {
+            "left": "9adf2a229750b5a8ff2ac93760a52070ccc75dadb47f1c141205eb668f8e4d13"
+          },
+          {
+            "left": "b9c203b72d4bcf60a389fd58774c9c6b024f2e42147d614acaaf48fbdb469292"
+          },
+          {
+            "left": "d8f7618d2bd5afb37f2a0e047960770cc6460dcd87d7836bc4fba8bac27e68a1"
+          }
+        ],
+        "signature": "MEYCIQD9SjVh06G1ehnYGbVQEN8lgfQmsFz6KkitG93AYAeemAIhAI9OlO4c6l0ZMkVfk5G4uCszM/egPWiW/TTeSC7Dl+ks"
+      },
+      "service_certificate": "-----BEGIN CERTIFICATE-----\nMIIBkTCCATegAwIBAgIRALOwhjWLWf5SkIJgTMU528swCgYIKoZIzj0EAwIwFjEU\nMBIGA1UEAwwLQ0NGIFNlcnZpY2UwHhcNMjYxMDIyMjA0MzU3WhcNMjcwMTIwMjA0\nMzU2WjAWMRQwEgYDVQQDDAtDQ0YgU2VydmljZTBZMBMGByqGSM49AgEGCCqGSM49\nAwEHA0IABPg19TiPrHTL/+KgY1uTdGY9W+nZHPd6cYyS4Bhs8RO+xGMqTmpuoBHi\nFijWvtftYkCBMyYuGfmVn2HQROg64xKjZjBkMBIGA1UdEwEB/wQIMAYBAf8CAQEw\nDgYDVR0PAQH/BAQDAgKEMB0GA1UdDgQWBBTGMAQRlTI/DqH9LS6sLBDhSgEO8zAf\nBgNVHSMEGDAWgBTGMAQRlTI/DqH9LS6sLBDhSgEO8zAKBggqhkjOPQQDAgNIADBF\nAiEAjtRilC7FR3J3uGHnZdZkINpZDROEaS1TTIka8QuFA/cCIE0F7s+9xuVgaxAk\nBtQ8G1ROnjc7lXua+MzulRptdR+W\n-----END CERTIFICATE-----\n",
+      "application_claims": [
+        {
+          "kind": "LedgerEntry",
+          "ledgerEntry": {
+            "collectionId": "subledger:0",
+            "contents": "{\"decision\":\"goal_stands\",\"incident\":\"m4-17\",\"match\":\"Harbour Town v Northbridge\",\"minute\":63,\"review\":\"offside\"}",
+            "protocol": "LedgerEntryV1",
+            "secretKey": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+          }
+        }
+      ],
+      "valid": false
+    },
+    {
+      "name": "live_receipt/node_cert_as_service_certificate",
+      "source": "Azure Confidential Ledger fourth-proofs-b7549b (eastus), Public, written with azure-confidentialledger 1.1.1 at data plane API 2026-02-23 by libs/proofs/py/scripts/live_run.py",
+      "receipt": {
+        "cert": "-----BEGIN CERTIFICATE-----\nMIICMDCCAdWgAwIBAgIRAKpQ7uO0Qb7u6LHqp+SPD/QwCgYIKoZIzj0EAwIwFjEU\nMBIGA1UEAwwLQ0NGIFNlcnZpY2UwHhcNMjYxMDIyMjA0MzQ5WhcNMjcwMTIwMjA0\nMzQ4WjATMREwDwYDVQQDDAhDQ0YgTm9kZTBZMBMGByqGSM49AgEGCCqGSM49AwEH\nA0IABJpDgPYwfgtE09jVDy0QTA8YQv5xlu3hfbmMx3Nm7NCwkkyE26kNVf95V69J\nxxAELF07xyzFkgoMJqqj815op5ujggEFMIIBATAMBgNVHRMBAf8EAjAAMB0GA1Ud\nDgQWBBSfbD/1+caYWYsxLexeCNVSODJxfzAfBgNVHSMEGDAWgBTGMAQRlTI/DqH9\nLS6sLBDhSgEO8zCBsAYDVR0RBIGoMIGlgjFmb3VydGgtcHJvb2ZzLWI3NTQ5Yi5w\ncm9kLnByaXZhdGUuYXp1cmVsZWRnZXIuY29tgjJmb3VydGgtcHJvb2ZzLWI3NTQ5\nYi5jb25maWRlbnRpYWwtbGVkZ2VyLmF6dXJlLmNvbYcECgIBQ4IgZm91cnRoLXBy\nb29mcy1iNzU0OWItYWNjbGVkZ2VyLTKCFGZvdXJ0aC1wcm9vZnMtYjc1NDliMAoG\nCCqGSM49BAMCA0kAMEYCIQDXHdxeWKRl+Cw1ybyfLnYmTdZNwrNx7ET9Fw29teIx\nBAIhAMK4JsG6vFhXRPQK/DN4y/+WSRz54MMSVG63vq28ex0V\n-----END CERTIFICATE-----\n",
+        "leafComponents": {
+          "claimsDigest": "87ee8b0599d4bd04bc61fd70dedad92e62adb264f62095ea4c2c4210fc1225c7",
+          "commitEvidence": "ce:2.63:40e84f26e78352e4f752b9ba968805cf9409f8f88a7acbc4cdeee363244d5ab8",
+          "writeSetDigest": "1f690f3f404eb7db2ba1950cdff42011db5bcdfeb4558444026f59659c88e248"
+        },
+        "nodeId": "166a0042f47c9ffc4d32f7c57edb52c869a96d2b2673a09a57cf058161543557",
+        "proof": [
+          {
+            "left": "3a1b55fd6891048a767fec5aa9661a93179df3162ec190838d6ea48b42aa7693"
+          },
+          {
+            "left": "529e589132afcc7b03370d01523d0dd6305cf81868ac6909db580da3cebf16a9"
+          },
+          {
+            "left": "a22239891d5327335600b74482040dc45ddf49aca06d0c959e4fbba297b22f69"
+          },
+          {
+            "left": "9adf2a229750b5a8ff2ac93760a52070ccc75dadb47f1c141205eb668f8e4d13"
+          },
+          {
+            "left": "b9c203b72d4bcf60a389fd58774c9c6b024f2e42147d614acaaf48fbdb469292"
+          },
+          {
+            "left": "d8f7618d2bd5afb37f2a0e047960770cc6460dcd87d7836bc4fba8bac27e68a1"
+          }
+        ],
+        "signature": "MEYCIQD9SjVh06G1ehnYGbVQEN8lgfQmsFz6KkitG93AYAeemAIhAI9OlO4c6l0ZMkVfk5G4uCszM/egPWiW/TTeSC7Dl+kt"
+      },
+      "service_certificate": "-----BEGIN CERTIFICATE-----\nMIICMDCCAdWgAwIBAgIRAKpQ7uO0Qb7u6LHqp+SPD/QwCgYIKoZIzj0EAwIwFjEU\nMBIGA1UEAwwLQ0NGIFNlcnZpY2UwHhcNMjYxMDIyMjA0MzQ5WhcNMjcwMTIwMjA0\nMzQ4WjATMREwDwYDVQQDDAhDQ0YgTm9kZTBZMBMGByqGSM49AgEGCCqGSM49AwEH\nA0IABJpDgPYwfgtE09jVDy0QTA8YQv5xlu3hfbmMx3Nm7NCwkkyE26kNVf95V69J\nxxAELF07xyzFkgoMJqqj815op5ujggEFMIIBATAMBgNVHRMBAf8EAjAAMB0GA1Ud\nDgQWBBSfbD/1+caYWYsxLexeCNVSODJxfzAfBgNVHSMEGDAWgBTGMAQRlTI/DqH9\nLS6sLBDhSgEO8zCBsAYDVR0RBIGoMIGlgjFmb3VydGgtcHJvb2ZzLWI3NTQ5Yi5w\ncm9kLnByaXZhdGUuYXp1cmVsZWRnZXIuY29tgjJmb3VydGgtcHJvb2ZzLWI3NTQ5\nYi5jb25maWRlbnRpYWwtbGVkZ2VyLmF6dXJlLmNvbYcECgIBQ4IgZm91cnRoLXBy\nb29mcy1iNzU0OWItYWNjbGVkZ2VyLTKCFGZvdXJ0aC1wcm9vZnMtYjc1NDliMAoG\nCCqGSM49BAMCA0kAMEYCIQDXHdxeWKRl+Cw1ybyfLnYmTdZNwrNx7ET9Fw29teIx\nBAIhAMK4JsG6vFhXRPQK/DN4y/+WSRz54MMSVG63vq28ex0V\n-----END CERTIFICATE-----\n",
+      "application_claims": [
+        {
+          "kind": "LedgerEntry",
+          "ledgerEntry": {
+            "collectionId": "subledger:0",
+            "contents": "{\"decision\":\"goal_stands\",\"incident\":\"m4-17\",\"match\":\"Harbour Town v Northbridge\",\"minute\":63,\"review\":\"offside\"}",
+            "protocol": "LedgerEntryV1",
+            "secretKey": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+          }
+        }
+      ],
+      "valid": false
+    }
+  ]
+}

@@ -59,3 +59,11 @@ def test_adr_0006_names_the_a2a_hosting_choice():
     paths = ("client_to_server", "foundry_to_server", "client_to_foundry", "foundry_to_mcp")
     for path_name in paths:
         assert path_name in text, path_name
+
+
+def test_adr_0007_records_ledger_deletion_outcome_and_ots_licensing():
+    [path] = ROOT.glob("docs/adr/0007-*.md")
+    text = path.read_text()
+    assert "after the ledger was deleted" in text
+    assert "LGPL" in text
+    assert re.search(r"^Decision: keep .*Confidential Ledger", text, re.MULTILINE)

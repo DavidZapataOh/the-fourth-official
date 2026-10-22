@@ -17,6 +17,7 @@ members = [
     "fourth-attestation",
     "fourth-contracts",
     "fourth-crypto",
+    "fourth-proofs",
 ]
 
 [[package]]
@@ -107,6 +108,20 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/63/c4/2d12f3ba1bc1cc3f844e9d34e602f825dea8d5cae069a203f80591e63091/azure_ai_projects-2.9.0.tar.gz", hash = "sha256:f85902b1c220f5ef999f7892d5fa8b6f1efecf867c73b107df7de614f5821fd3", size = 40061819, upload-time = "2026-10-17T03:57:23.38Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/99/25/cda9f33df69ba45378b7dcbb591b15ca0df0ddf633cbf2359d2f8030f06b/azure_ai_projects-2.9.0-py3-none-any.whl", hash = "sha256:e0e0ea059dee51ea92b65f1e40fa6b50f62636485f8228325f1918f9fb5d7d92", size = 552868, upload-time = "2026-10-17T03:57:26.606Z" },
+]
+
+[[package]]
+name = "azure-confidentialledger"
+version = "1.1.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "azure-core" },
+    { name = "cryptography" },
+    { name = "isodate" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/c7/e5/5e07345475de8edc74c9620145b12ce8d9f4502697947fa909f531ba419f/azure-confidentialledger-1.1.1.zip", hash = "sha256:8a8ee6103e6f6de8a3c5bb952542d4e4002066c7e3973a9278011c1515850a70", size = 176890, upload-time = "2023-08-11T21:06:54.664Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/e7/d9/197b4c2328fde0e6b5979fcfcdd010d32be9897e64010fb136599e4b2fb4/azure_confidentialledger-1.1.1-py3-none-any.whl", hash = "sha256:f6cc82c425f3313cc02560780b066d63c56b99199bd1e35c7cb34dfbdfb033a0", size = 101542, upload-time = "2023-08-11T21:06:56.882Z" },
 ]
 
 [[package]]
@@ -652,6 +667,25 @@ requires-dist = [
     { name = "cbor2", specifier = ">=6.1.5" },
     { name = "cryptography", specifier = ">=50.0.2" },
     { name = "jcs", specifier = ">=0.2.1" },
+]
+
+[[package]]
+name = "fourth-proofs"
+version = "0.0.0"
+source = { editable = "libs/proofs/py" }
+dependencies = [
+    { name = "azure-confidentialledger" },
+    { name = "cryptography" },
+    { name = "fourth-crypto" },
+    { name = "rfc3161-client" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "azure-confidentialledger", specifier = ">=1.1.1" },
+    { name = "cryptography", specifier = ">=50.0.2" },
+    { name = "fourth-crypto", editable = "libs/crypto/py" },
+    { name = "rfc3161-client", specifier = ">=1.0.9" },
 ]
 
 [[package]]
@@ -1649,6 +1683,29 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz", hash = "sha256:f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed", size = 142856, upload-time = "2026-05-14T19:25:27.735Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/a0/f4/c67b0b3f1b9245e8d266f0f112c500d50e5b4e83cb6f3b71b6528104182a/requests-2.34.2-py3-none-any.whl", hash = "sha256:2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0", size = 73075, upload-time = "2026-05-14T19:25:26.443Z" },
+]
+
+[[package]]
+name = "rfc3161-client"
+version = "1.0.9"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "cryptography" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/56/53/e2f526fb6957023180c928448e2dd71b03b35038c315aed2d12d9a77c3af/rfc3161_client-1.0.9.tar.gz", hash = "sha256:66997415086d2c6e5d57a2d315157b32a9c3f4f1312877ca8eb55e2e0ddf8ce4", size = 112825, upload-time = "2026-09-14T19:32:29.113Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/92/2c/b81b822bc067647aa291dc4ea71f052f994344934fc84d499759aec64cf8/rfc3161_client-1.0.9-cp39-abi3-macosx_10_12_x86_64.whl", hash = "sha256:5e619d7e28ffa3a46685923e6d6ba4ce2e74cb09a41c77995a0702cc1a533bc4", size = 2109721, upload-time = "2026-09-14T19:32:08.154Z" },
+    { url = "https://files.pythonhosted.org/packages/88/cf/bcfb66eaeccdc076457451a6213360c840bcacd0e938e8507951be29373f/rfc3161_client-1.0.9-cp39-abi3-macosx_11_0_arm64.whl", hash = "sha256:a7004edfbf1bb7ec7801978a39fa7a7fe385ca59673df90d7578079b6eba3b24", size = 2439706, upload-time = "2026-09-14T19:32:10.339Z" },
+    { url = "https://files.pythonhosted.org/packages/8e/f3/4b69d47fd7f79238bf8db20902a30d28c908efc0d906fb57abcc89ac75e3/rfc3161_client-1.0.9-cp39-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:7b703b233dbee7228d117d5f1c118363c61d523fa6f018c9217c79e3c6684f86", size = 2651455, upload-time = "2026-09-14T19:32:12.025Z" },
+    { url = "https://files.pythonhosted.org/packages/33/49/154c3e80ac94e51b9d1097dab15b95f44aa593c395bd41775e4486a7d0a0/rfc3161_client-1.0.9-cp39-abi3-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:d3cbf1991b6f3457efcb25e1d31179cac556112e6d3e65ec9e0fd70c6e9af90d", size = 2051342, upload-time = "2026-09-14T19:32:13.631Z" },
+    { url = "https://files.pythonhosted.org/packages/c8/57/79bf6a67cd4ca729b0b74e6fa79ebef84e6bc8657b85772df01a7d3b7b89/rfc3161_client-1.0.9-cp39-abi3-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:614da494c6f8850c5d6d98c23bc291a4e4dbf2c3c9082d9907fa156f9e4a75c6", size = 2418228, upload-time = "2026-09-14T19:32:15.451Z" },
+    { url = "https://files.pythonhosted.org/packages/11/ae/19139fee184916065705d660bad203b676dc40b449afff36f79818c59c4f/rfc3161_client-1.0.9-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:fac3f440a507555e684dc5daba75e33dc08f0f45fdefa48448f19001233a6b21", size = 2415566, upload-time = "2026-09-14T19:32:17.185Z" },
+    { url = "https://files.pythonhosted.org/packages/6e/54/43f89c8e004baade51943261b29f9dd866df3383f4554d5797a2568c2855/rfc3161_client-1.0.9-cp39-abi3-musllinux_1_2_aarch64.whl", hash = "sha256:0ac247d5aa22f3514d1e284bdc547d2ad5f101e1e5d7f6db25db2ab3a0c59f06", size = 2995975, upload-time = "2026-09-14T19:32:19.007Z" },
+    { url = "https://files.pythonhosted.org/packages/2b/b2/938e4df767a2ea6fae2bc8e8e0df52e1d70a32a082a13bdfdd6fac59dc32/rfc3161_client-1.0.9-cp39-abi3-musllinux_1_2_armv7l.whl", hash = "sha256:03be7ac7919c7f4c566076b07773b81b1f1b28d447fa91c6960fb5f82fac5bc1", size = 2358728, upload-time = "2026-09-14T19:32:20.644Z" },
+    { url = "https://files.pythonhosted.org/packages/ff/54/f0193b27f1a635aa336d19b48c296f133719cafb87e950de6eae4638a046/rfc3161_client-1.0.9-cp39-abi3-musllinux_1_2_i686.whl", hash = "sha256:8208999e94e1252e3f5f748f5efe59d3b9c308d04c7626be1becfbf3236c9de4", size = 2565766, upload-time = "2026-09-14T19:32:22.42Z" },
+    { url = "https://files.pythonhosted.org/packages/15/41/6c48b05fc41a424ab3b0cb0515e77046707b498837411633fe7ce77812ee/rfc3161_client-1.0.9-cp39-abi3-musllinux_1_2_x86_64.whl", hash = "sha256:d4cf92f0e784ff02ff5ea1c574f8521f30953dc178092424126dbd8348034f93", size = 2643597, upload-time = "2026-09-14T19:32:24.134Z" },
+    { url = "https://files.pythonhosted.org/packages/d2/18/fcb2f311b0b1754b0476165a4eae2929606007fc0ff0a575a65dbff2c0f6/rfc3161_client-1.0.9-cp39-abi3-win32.whl", hash = "sha256:4d33f5aaec2974239e1c62a79a6fcf32506b09095482377a8b5be3a00fa67dfb", size = 1996018, upload-time = "2026-09-14T19:32:25.972Z" },
+    { url = "https://files.pythonhosted.org/packages/d2/a1/b71d9f2071660a914e039061d3cdcad77b1cbccf7276bff073f95e8b4d1a/rfc3161_client-1.0.9-cp39-abi3-win_amd64.whl", hash = "sha256:908f6a775da4bdce1d39f825a4431f389542696078ef3e4ed911a068bcaf1792", size = 2431351, upload-time = "2026-09-14T19:32:27.621Z" },
 ]
 
 [[package]]

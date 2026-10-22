@@ -1,0 +1,19 @@
+[project]
+name = "fourth-proofs"
+version = "0.0.0"
+description = "Offline verification of Azure Confidential Ledger receipts, RFC 3161 timestamps and OpenTimestamps proofs"
+license = "Apache-2.0"
+requires-python = ">=3.13"
+dependencies = [
+    "azure-confidentialledger>=1.1.1",
+    "cryptography>=50.0.2",
+    "fourth-crypto",
+    "rfc3161-client>=1.0.9",
+]
+
+[tool.uv.sources]
+fourth-crypto = { workspace = true }
+
+[build-system]
+requires = ["uv_build>=0.12.21,<0.13.0"]
+build-backend = "uv_build"

@@ -1,0 +1,16 @@
+{
+  "source": "ots stamp (opentimestamps-client==0.7.2) against the default public calendars",
+  "stamped_at": "2026-10-22T21:41:33+00:00",
+  "data": "The Fourth Official RFC 3161 test vector",
+  "data_sha256": "4b515ce253f78a412b289c534cd1f1f171fae47be3d76faef7ddcfe1f076f901",
+  "pending": {
+    "proof": "AE9wZW5UaW1lc3RhbXBzAABQcm9vZgC/ieLohOiSlAEIS1Fc4lP3ikErKJxTTNHx8XH65Hvj12+u993P4fB2+QHwEGSjj7Ga3BWKemclLLI58+gI//AIOqjHy0XHpcgI8BClic6ZQJ1qWLtNMAbAyzQECPEgxCcpG2K596VbS2VzmJBLvPYH7MFY6/9vLSj13o2Is9wI8SAeq0DPuuu/7NsYdmuHk0pB33dyw4m2u2ZXEYRLGeLjZwjxBGragwzwCPpAlCv5JTpAAIPf4w0u+QyOLi1odHRwczovL2FsaWNlLmJ0Yy5jYWxlbmRhci5vcGVudGltZXN0YW1wcy5vcmf/8BBeb7vdoD/ZKrddOR7ikzxpCPEgFpIF48MFgP0aUm7Pq+fwu3HhaiwKVJlJhfwklSLVUxUI8CBfk/eCx8u+T9RKlvVallVAbPcARA+1pjEnUUpiJ0QV9wjxBGragwzwCFq8GivafzNmAIPf4w0u+QyOIyJodHRwczovL2J0Yy5jYWxlbmRhci5jYXRhbGxheHkuY29t//AIZYmqZPgD6RgI8SBjzuKyev98jpArQviXuntkJ/ktggYU4L/noSdovtl8yAjwEBnhlhdOQHWxXp6BCw4i/KUI8SAnCV/S4mwkn3bW1dXEg4ljHg0NDsEhV3VAr7LMQQu1ZgjxIEoubUybJVj0oQtcTSFpoAWHzbm3mAgFgHeMQHOjyCnsCPAgaVeEMtu+Cg0DNR3hFqYl737So4a+5eYsI9o0dlTR7nII8QRq2oMM8AgGhXVEVN3BlgCD3+MNLvkMjiwraHR0cHM6Ly9ib2IuYnRjLmNhbGVuZGFyLm9wZW50aW1lc3RhbXBzLm9yZ/AQhqEhyLcpl6rGmGqz0YhdrgjxIEDIT4BVENEjP845E5gQ3GtxNJ/LouYKEUgm2YVv4D5nCPAgQKFycEjzKOUnMuFI4D7zpvZpPPfO0iGr3jXTuG7ikDsI8SDVenARAHkCCFH1WBy8GEA2Ww5ou99/fSNxF+rFL0XpCQjwIHLZRwjjeIBFLDCfynFuq8cQZMD/3RlcllkHJ/wHANPeCPEEatqDDPAIrKC6AVAD0UQAg9/jDS75DI4pKGh0dHBzOi8vZmlubmV5LmNhbGVuZGFyLmV0ZXJuaXR5d2FsbC5jb20=",
+    "calendars": [
+      "https://alice.btc.calendar.opentimestamps.org",
+      "https://btc.calendar.catallaxy.com",
+      "https://bob.btc.calendar.opentimestamps.org",
+      "https://finney.calendar.eternitywall.com"
+    ]
+  },
+  "upgrades": []
+}
