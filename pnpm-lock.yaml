@@ -39,8 +39,8 @@ importers:
         specifier: 5.1.0
         version: 5.1.0
       cborg:
-        specifier: 6.1.4
-        version: 6.1.4
+        specifier: 6.2.1
+        version: 6.2.1
     devDependencies:
       fast-check:
         specifier: 4.10.2
@@ -414,8 +414,8 @@ packages:
     engines: {node: '>=22'}
     hasBin: true
 
-  cborg@6.1.4:
-    resolution: {integrity: sha512-JqjDDfTuED2qUvy570NGQUXqfzC34H++AHJIZnLAmiAdHNqHJKbtzox5yViRz5rc0gM9OPSX7n7Sh+BNU263Xw==}
+  cborg@6.2.1:
+    resolution: {integrity: sha512-DwiF3Jd5RW6kJuTQMzQb/sdZD03utp15EcQNOMTvE/ZYCdDPzETsGOY5lj8imKxbsEuYvOzcMSiKLiT4C2/2Lw==}
     hasBin: true
 
   chai@6.3.0:
@@ -924,7 +924,7 @@ snapshots:
 
   canonicalize@5.1.0: {}
 
-  cborg@6.1.4: {}
+  cborg@6.2.1: {}
 
   chai@6.3.0: {}
 
