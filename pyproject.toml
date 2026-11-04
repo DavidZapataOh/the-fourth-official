@@ -9,7 +9,7 @@ dependencies = []
 
 [dependency-groups]
 dev = [
-  "azure-ai-projects>=2.5.0",
+  "azure-ai-projects>=2.10.0",
   "azure-identity>=1.25.0",
   "datamodel-code-generator>=0.86.0",
   "httpx>=0.28.1",
